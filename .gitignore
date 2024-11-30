@@ -8,3 +8,6 @@
 /Logs
 /Library
 /Temp
+/Build
+/obj/Debug
+/Assets/Firebase/Plugins
