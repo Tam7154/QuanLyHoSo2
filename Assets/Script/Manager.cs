@@ -126,18 +126,36 @@ public class Manager : MonoBehaviour
         }
     }
 
+    public void Add(InfoPerson infoPerson)
+    {
+        string newId = $"{infoPerson.infoPerson["ten"]}:{infoPerson.infoPerson["don vi"]}:{infoPerson.infoPerson["nam sinh"]}";
+        DocumentReference docRef = db.Collection("ho so").Document(newId);
+
+        docRef.SetAsync(infoPerson.infoPerson).ContinueWithOnMainThread(task =>
+        {
+            if (task.IsCompleted)
+            {
+                Debug.Log($"Document với ID '{newId}' được thêm thành công!");
+            }
+            else
+            {
+                Debug.LogError("Có lỗi xảy ra khi thêm document.");
+            }
+        });
+    }
+
     public void Delete(string s)
     {
         db.Collection("ho so").Document(s).DeleteAsync().ContinueWithOnMainThread(task =>
-    {
-        if (task.IsCompleted)
         {
-            Debug.Log("Tài liệu đã bị xóa.");
-        }
-        else
-        {
-            Debug.LogError("Có lỗi xảy ra khi xóa tài liệu: " + task.Exception);
-        }
-    });
+            if (task.IsCompleted)
+            {
+                Debug.Log("Tài liệu đã bị xóa.");
+            }
+            else
+            {
+                Debug.LogError("Có lỗi xảy ra khi xóa tài liệu: " + task.Exception);
+            }
+        });
     }
 }

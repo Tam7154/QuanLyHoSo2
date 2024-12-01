@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 57015702278598140a0fbc37cf4d815a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - UTM Aptima
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 3392c89794c7c5f4ca7b3770a448c612, type: 3}
+  - {fileID: 12800000, guid: 073cecf8dfaa0994abb50a992d30fc43, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b138852ea947d874fa1498633a579f76
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - UTM Cooper Black
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0166e3fff3db38d4fbf13b24b250dae8, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

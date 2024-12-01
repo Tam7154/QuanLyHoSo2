@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 4d074f707cb68c249bf72ad64352f3ba
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - UTM Edwardian
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 30a59011950788d4f85ef027ec7cdef2, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

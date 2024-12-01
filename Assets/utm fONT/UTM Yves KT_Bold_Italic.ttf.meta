@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 13ef9ab8a8bf21d44854b1dda9a0c50e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - UTM Yves KT
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 40db884b3898a704f9d76fd98ccc7260, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

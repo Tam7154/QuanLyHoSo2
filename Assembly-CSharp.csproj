@@ -62,6 +62,7 @@
     <Compile Include="Assets\Script\Filter.cs" />
     <Compile Include="Assets\Script\InfoPerson.cs" />
     <Compile Include="Assets\Script\SlotInTongHopQuanNhan.cs" />
+    <Compile Include="Assets\Script\ThemHoSoQuanNhan.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: eee760938dc517c4abb1d16405a1890e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - UTM Banque
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b0e007d36ead41a45afbd6cd45b2dc8c, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

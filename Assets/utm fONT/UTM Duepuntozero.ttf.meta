@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: c93212a89865edc428731f60a35b6c6f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - UTM Duepuntozero
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e14c283508d85cd42bb694b835949309, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
