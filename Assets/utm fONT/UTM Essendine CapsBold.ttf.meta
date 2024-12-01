@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 3eea49b726229ea429d462f2327e5617
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - UTM Essendine Caps
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 81232c6c959278545b86767da9f3bd21, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

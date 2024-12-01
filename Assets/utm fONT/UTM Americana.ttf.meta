@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ac82920ec8268ee4285a5a24b131d9bb
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - UTM Americana
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 885405df9a7e8094e98f5068d831439a, type: 3}
+  - {fileID: 12800000, guid: 453abbf46131e6e4eb9456151a057158, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

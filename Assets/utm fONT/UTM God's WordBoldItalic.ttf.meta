@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: fcb99ea4076cf484bbcaa8e69a1265e9
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - UTM God's Word
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e0cf7e6e48f383141a3f082b4cf4c2f1, type: 3}
+  - {fileID: 12800000, guid: 7c33143049fbbd04993b803a93b24fe8, type: 3}
+  - {fileID: 12800000, guid: ab436a3a55507c245b6f3ccc8cbc763c, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

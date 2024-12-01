@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 5b8e9396d4e6f654e9cd33936e133e89
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - UTM BryantLG
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 031461dc977149645ac6b77df5196fed, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
