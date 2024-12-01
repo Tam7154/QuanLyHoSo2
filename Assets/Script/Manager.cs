@@ -126,12 +126,12 @@ public class Manager : MonoBehaviour
         }
     }
 
-    public void Add(InfoPerson infoPerson)
+    public async void Add(InfoPerson infoPerson)
     {
         string newId = $"{infoPerson.infoPerson["ten"]}:{infoPerson.infoPerson["don vi"]}:{infoPerson.infoPerson["nam sinh"]}";
         DocumentReference docRef = db.Collection("ho so").Document(newId);
 
-        docRef.SetAsync(infoPerson.infoPerson).ContinueWithOnMainThread(task =>
+        await docRef.SetAsync(infoPerson.infoPerson).ContinueWithOnMainThread(task =>
         {
             if (task.IsCompleted)
             {
@@ -142,11 +142,14 @@ public class Manager : MonoBehaviour
                 Debug.LogError("Có lỗi xảy ra khi thêm document.");
             }
         });
+
+        ReloadAllInfo();
     }
 
-    public void Delete(string s)
+
+    public async void Delete(string s)
     {
-        db.Collection("ho so").Document(s).DeleteAsync().ContinueWithOnMainThread(task =>
+        await db.Collection("ho so").Document(s).DeleteAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsCompleted)
             {
@@ -157,5 +160,7 @@ public class Manager : MonoBehaviour
                 Debug.LogError("Có lỗi xảy ra khi xóa tài liệu: " + task.Exception);
             }
         });
+
+        ReloadAllInfo();
     }
 }
