@@ -12,7 +12,7 @@ public class TongHopQuanNhanPanel : MonoBehaviour
 
     public void Add()
     {
-
+        Instantiate(Resources.Load("Add QuanNhan")as GameObject, GameObject.Find("Canvas").transform.GetChild(0));
     }
     public void Delete()
     {
