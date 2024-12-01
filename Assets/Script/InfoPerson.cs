@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class InfoPerson
 {
-    public string name;
-    public Dictionary<string, object> infoPerson;
+    public string name;//ten id cua quan nhan
+    public Dictionary<string, object> infoPerson;//ten node + value node
 }

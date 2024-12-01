@@ -16,7 +16,7 @@ public class TongHopQuanNhanPanel : MonoBehaviour
     }
     public void Delete()
     {
-
+        Manager.Instance.Delete(curSelect.name);
     }
     public void Edit()
     {
