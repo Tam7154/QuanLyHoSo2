@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class SlotInTongHopQuanNhan : MonoBehaviour
 {
+    //Aoyama%20Aina
     TongHopQuanNhanPanel tongHopQuanNhanPanel;
-
+    public InfoPerson infoPerson;
     private void Start()
     {
         tongHopQuanNhanPanel = FindObjectOfType<TongHopQuanNhanPanel>();
