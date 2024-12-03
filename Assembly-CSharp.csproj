@@ -58,11 +58,14 @@
   <ItemGroup>
     <Compile Include="Assets\Script\SlotInBoxCheck.cs" />
     <Compile Include="Assets\Script\TongHopQuanNhanPanel.cs" />
+    <Compile Include="Assets\Script\LoginPanel.cs" />
+    <Compile Include="Assets\Script\ThemHoSoQuanNhan.cs" />
     <Compile Include="Assets\Script\Manager.cs" />
     <Compile Include="Assets\Script\Filter.cs" />
     <Compile Include="Assets\Script\InfoPerson.cs" />
     <Compile Include="Assets\Script\SlotInTongHopQuanNhan.cs" />
-    <Compile Include="Assets\Script\ThemHoSoQuanNhan.cs" />
+    <Compile Include="Assets\Script\UserInfo.cs" />
+    <Compile Include="Assets\Script\NotificationManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
