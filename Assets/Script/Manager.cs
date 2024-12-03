@@ -83,7 +83,6 @@ public class Manager : MonoBehaviour
     }
     public void StartQuanLy()
     {
-        print("A");
         loginLayout.SetActive(false);
         ReloadAllInfo();
     }
@@ -187,10 +186,12 @@ public class Manager : MonoBehaviour
             if (task.IsCompleted)
             {
                 Debug.Log($"Document với ID '{newId}' được thêm thành công!");
+                NotificationManager.CreateNoti("Hồ sơ đã được thêm thành công.");
             }
             else
             {
                 Debug.LogError("Có lỗi xảy ra khi thêm document.");
+                NotificationManager.CreateNoti("Có lỗi xảy ra khi thêm hồ sơ.");
             }
         });
 
@@ -205,10 +206,12 @@ public class Manager : MonoBehaviour
             if (task.IsCompleted)
             {
                 Debug.Log("Tài liệu đã bị xóa.");
+                NotificationManager.CreateNoti("Hồ sơ đã bị xóa.");
             }
             else
             {
                 Debug.LogError("Có lỗi xảy ra khi xóa tài liệu: " + task.Exception);
+                NotificationManager.CreateNoti("Có lỗi xảy ra khi xóa hồ sơ.");
             }
         });
 

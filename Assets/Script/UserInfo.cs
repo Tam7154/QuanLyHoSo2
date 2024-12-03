@@ -13,10 +13,13 @@ public class UserInfo
     public string descriptionUrl;
 
     public string donVi;
+    public string chucVu;
     public string levelControl;
+    public bool isKey;
 
     public UserInfo(Dictionary<string, object> keyValuePairs)
     {
-        Debug.Log(keyValuePairs["id"]);
+        levelControl = keyValuePairs["level control"].ToString();
+        donVi = keyValuePairs["don vi"].ToString();
     }
 }

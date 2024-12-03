@@ -65,6 +65,7 @@
     <Compile Include="Assets\Script\InfoPerson.cs" />
     <Compile Include="Assets\Script\SlotInTongHopQuanNhan.cs" />
     <Compile Include="Assets\Script\UserInfo.cs" />
+    <Compile Include="Assets\Script\NotificationManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

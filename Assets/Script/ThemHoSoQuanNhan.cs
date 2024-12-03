@@ -26,7 +26,7 @@ public class ThemHoSoQuanNhan : MonoBehaviour
         //string namSinh= scrollRect.content.Find("ip nam sinh").GetComponent<TMP_InputField>().text;
 
         InfoPerson newInfo = new InfoPerson();
-        newInfo.name = "a";
+        newInfo.name = scrollRect.content.Find("ip ten").GetComponent<TMP_InputField>().text;
         newInfo.infoPerson = new Dictionary<string, object>();
         foreach (Transform item in scrollRect.content)
         {

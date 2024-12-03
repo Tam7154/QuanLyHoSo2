@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class SlotInTongHopQuanNhan : MonoBehaviour
 {
     //Aoyama%20Aina
+    //SUKE-080
+    //MILK-067
+    //sayama love
     TongHopQuanNhanPanel tongHopQuanNhanPanel;
     public InfoPerson infoPerson;
     private void Start()
