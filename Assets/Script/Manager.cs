@@ -10,7 +10,7 @@ using TMPro;
 
 //load toàn bộ quân nhân
 //thêm quân nhân //
-//xóa quân nhân
+//xóa quân nhân //
 //sửa quân nhân
 //filter //
 //đăng nhập
@@ -22,9 +22,13 @@ public class Manager : MonoBehaviour
 
     FirebaseFirestore db;
 
+    public GameObject loginLayout;
+
     public List<InfoPerson> infoPerson;
 
     public TongHopQuanNhanPanel tongHopQuanNhanPanel;
+
+    public UserInfo curUser;
 
     void Awake()
     {
@@ -33,7 +37,54 @@ public class Manager : MonoBehaviour
 
     private void Start()
     {
+        StartLogin();
+        Initialize();
+    }
+
+    public async void CheckForLogin(string us, string pw)
+    {
+        CollectionReference colRef = db.Collection("users");
+
+        await colRef.GetSnapshotAsync().ContinueWithOnMainThread(task =>
+        {
+            if (task.IsCompleted)
+            {
+                QuerySnapshot snapshot = task.Result;
+                foreach (DocumentSnapshot document in snapshot.Documents)
+                {
+                    if (document.GetValue<string>("id") == us &&
+                    document.GetValue<string>("pw") == pw)
+                    {
+                        Dictionary<string, object> dict = document.ToDictionary();
+                        curUser = new UserInfo(dict);
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Debug.LogError("Không thể lấy document hoặc document không tồn tại.");
+            }
+        });
+
+        if (curUser != null)
+        {
+            StartQuanLy();
+        }
+    }
+
+    public void StartLogin()
+    {
+        loginLayout.SetActive(true);
+    }
+    void Initialize()
+    {
         db = FirebaseFirestore.DefaultInstance;
+    }
+    public void StartQuanLy()
+    {
+        print("A");
+        loginLayout.SetActive(false);
         ReloadAllInfo();
     }
 
