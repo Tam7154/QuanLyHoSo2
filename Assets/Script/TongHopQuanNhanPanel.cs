@@ -63,8 +63,6 @@ public class TongHopQuanNhanPanel : MonoBehaviour
                 slot.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = item.infoPerson.GetValueOrDefault("nam sinh").ToString();
                 slot.name = $"{item.infoPerson.GetValueOrDefault("ten")}:{item.infoPerson.GetValueOrDefault("don vi")}:{item.infoPerson.GetValueOrDefault("nam sinh")}";
                 slot.GetComponent<SlotInTongHopQuanNhan>().infoPerson = item;
-
-                //slot.g
             }
         }
     }
@@ -102,7 +100,23 @@ public class TongHopQuanNhanPanel : MonoBehaviour
         }
         else
         {
-            Instantiate(Resources.Load("Add QuanNhan") as GameObject, GameObject.Find("Canvas").transform.GetChild(0));
+            GameObject g = Instantiate(Resources.Load("Edit QuanNhan") as GameObject, GameObject.Find("Canvas").transform.GetChild(0));
+
+            Transform t = g.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0).transform;
+            foreach (var item in curSelect.infoPerson.infoPerson)
+            {
+                Transform gg = t.Find("ip " + item.Key);
+                if (gg != null)
+                {
+                    TMP_InputField ip = gg.GetComponent<TMP_InputField>();
+                    ip.text = item.Value.ToString();
+                }
+            }
+
+            g.transform.GetChild(0).transform.Find("Close").GetComponent<Button>().onClick.AddListener(() =>
+            {
+                Destroy(g);
+            });
         }
     }
     public void Export()
