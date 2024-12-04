@@ -2635,7 +2635,7 @@ GameObject:
   - component: {fileID: 1236827279321185160}
   - component: {fileID: 1236827279321185163}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Close
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2837,7 +2837,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "TH\xCAM H\u1ED2 S\u01A0 QU\xC2N NH\xC2N"
+  m_text: "S\u1EECA H\u1ED2 S\u01A0 QU\xC2N NH\xC2N"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 97764d303787de74ab16417c2f005894, type: 2}
   m_sharedMaterial: {fileID: -3743128310418492007, guid: 97764d303787de74ab16417c2f005894, type: 2}
@@ -4294,7 +4294,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "T\u1EA1o m\u1EDBi"
+  m_text: "L\u01B0u"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 97764d303787de74ab16417c2f005894, type: 2}
   m_sharedMaterial: {fileID: -3743128310418492007, guid: 97764d303787de74ab16417c2f005894, type: 2}
@@ -9208,7 +9208,7 @@ GameObject:
   - component: {fileID: 1236827280863147485}
   - component: {fileID: 1236827280863147427}
   m_Layer: 5
-  m_Name: Add QuanNhan
+  m_Name: Edit QuanNhan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9300,7 +9300,7 @@ GameObject:
   - component: {fileID: 1236827280870405649}
   - component: {fileID: 1236827280870405648}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Save
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
