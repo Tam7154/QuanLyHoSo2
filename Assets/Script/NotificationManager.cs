@@ -15,6 +15,6 @@ public static class NotificationManager
         Vector2 newSize = g.GetComponent<RectTransform>().sizeDelta;
         newSize.x = text.textBounds.size.x + 50;
         g.GetComponent<RectTransform>().sizeDelta = newSize;
-        GameObject.Destroy(g, 3);
+        GameObject.Destroy(g, 2);
     }
 }

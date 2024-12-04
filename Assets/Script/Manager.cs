@@ -16,6 +16,11 @@ using TMPro;
 //đăng nhập
 //xuất excel
 
+//Aoyama%20Aina
+//SUKE-080
+//MILK-067
+//sayama love
+
 public class Manager : MonoBehaviour
 {
     public static Manager Instance { get; private set; }
@@ -142,38 +147,7 @@ public class Manager : MonoBehaviour
             }
         }
 
-        ShowInfo();
-    }
-
-    public void ShowInfo()
-    {
-        foreach (Transform item in tongHopQuanNhanPanel.content)
-        {
-            Destroy(item.gameObject);
-        }
-
-        foreach (var item in infoPerson)
-        {
-            bool b = true;
-            foreach (var jtem in tongHopQuanNhanPanel.filters)
-            {
-                if (!jtem.data[item.infoPerson[jtem.gameObject.name].ToString()])
-                {
-                    b = false;
-                    break;
-                }
-            }
-
-            if (b)
-            {
-                GameObject slot = Instantiate(Resources.Load("Slot in TongHopQuanNhan") as GameObject, tongHopQuanNhanPanel.content);
-                slot.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = item.infoPerson.GetValueOrDefault("ten").ToString();
-                slot.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.infoPerson.GetValueOrDefault("don vi").ToString();
-                slot.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = item.infoPerson.GetValueOrDefault("nam sinh").ToString();
-                slot.name = $"{item.infoPerson.GetValueOrDefault("ten")}:{item.infoPerson.GetValueOrDefault("don vi")}:{item.infoPerson.GetValueOrDefault("nam sinh")}";
-                slot.GetComponent<SlotInTongHopQuanNhan>().infoPerson = item;
-            }
-        }
+        tongHopQuanNhanPanel.ShowListInfo();
     }
 
     public async void Add(InfoPerson infoPerson)

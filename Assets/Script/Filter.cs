@@ -33,7 +33,7 @@ public class Filter : MonoBehaviour
                 data[g.name] = !v;
 
                 ShowColorBoxCheck();
-                Manager.Instance.ShowInfo();
+                Manager.Instance.tongHopQuanNhanPanel.ShowListInfo();
             });
         }
         ShowColorBoxCheck();
