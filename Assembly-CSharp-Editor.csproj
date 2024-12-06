@@ -56,8 +56,8 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Modern UI Pack\Editor\Scripts\InitMUIP.cs" />
     <Compile Include="Assets\Modern UI Pack\Editor\Scripts\ContextMenu.cs" />
+    <Compile Include="Assets\Modern UI Pack\Editor\Scripts\InitMUIP.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ExternalDependencyManager\Editor\1.2.183\Google.IOSResolver.dll" />

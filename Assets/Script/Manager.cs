@@ -7,6 +7,7 @@ using Firebase.Extensions;
 using System.Linq;
 using System.Threading.Tasks;
 using TMPro;
+using UnityEngine.UI;
 
 //load toàn bộ quân nhân
 //thêm quân nhân //
@@ -46,9 +47,22 @@ public class Manager : MonoBehaviour
         Initialize();
     }
 
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Q))
+    //    {
+    //        Add(14, "c1");
+    //        Add(14, "c2");
+    //        Add(14, "c3");
+    //        Add(14, "c4");
+    //    }
+    //}
+
     public async void CheckForLogin(string us, string pw)
     {
         GameObject loading = Instantiate(Resources.Load("Loading Panel") as GameObject, GameObject.Find("Canvas").transform);
+
+        await Task.Delay(1000);
 
         CollectionReference colRef = db.Collection("users");
 
@@ -80,6 +94,10 @@ public class Manager : MonoBehaviour
         {
             StartQuanLy();
         }
+        else
+        {
+            NotificationManager.CreateNoti("Sai tên tài khoản hoặc mật khẩu!");
+        }
     }
 
     public void StartLogin()
@@ -89,6 +107,14 @@ public class Manager : MonoBehaviour
     void Initialize()
     {
         db = FirebaseFirestore.DefaultInstance;
+
+        foreach (var item in tongHopQuanNhanPanel.dropdownMultiSelects)
+        {
+            item.GetComponent<Button>().onClick.AddListener(() =>
+            {
+                tongHopQuanNhanPanel.ShowListInfo();
+            });
+        }
     }
     public void StartQuanLy()
     {
@@ -117,17 +143,6 @@ public class Manager : MonoBehaviour
                     newInfo.infoPerson = document.ToDictionary();
                     newInfo.name = document.GetValue<string>("ten");
                     infoPerson.Add(newInfo);
-
-                    //GameObject slot = Instantiate(Resources.Load("Slot in TongHopQuanNhan") as GameObject, tongHopQuanNhanPanel.content);
-                    //slot.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = document.GetValue<string>("ten");
-                    //slot.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = document.GetValue<string>("don vi");
-                    //slot.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = document.GetValue<string>("nam sinh");
-
-                    // Lấy field cụ thể từ mỗi tài liệu
-                    //if (document.TryGetValue("ten", out string name))
-                    //{
-                    //    Debug.Log($"ten: {name}");
-                    //}
                 }
             }
             else
@@ -139,26 +154,135 @@ public class Manager : MonoBehaviour
         Destroy(loading);
 
         //lay du lieu cho filter
-        tongHopQuanNhanPanel.filters.ForEach(n => n.data.Clear());
+        //tongHopQuanNhanPanel.filters.ForEach(n => n.data.Clear());
 
-        foreach (var item in tongHopQuanNhanPanel.filters)
+        foreach (var item in tongHopQuanNhanPanel.dropdownMultiSelects)
+        {
+            for (int i = 0; i < item.items.Count; i++)
+            {
+                item.RemoveItem(item.items[i].itemName);
+            }
+        }
+
+        foreach (var item in tongHopQuanNhanPanel.dropdownMultiSelects)
         {
             foreach (var jtem in infoPerson)
             {
                 string var = jtem.infoPerson.GetValueOrDefault(item.name).ToString();
 
-                if (!item.data.ContainsKey(item.name) &&
-                    !item.data.ContainsKey(var))
+                bool contain = false;
+
+                foreach (var ntem in item.items)
                 {
-                    item.data.Add(var, true);
+                    if (ntem.itemName == var)
+                    {
+                        contain = true;
+                        break;
+                    }
+                }
+
+                if (!contain)
+                {
+                    item.CreateNewItem(var, true);
+
                 }
             }
+
+            item.UpdateItemLayout();
         }
+
+        //foreach (var item in tongHopQuanNhanPanel.filters)
+        //{
+        //    foreach (var jtem in infoPerson)
+        //    {
+        //        string var = jtem.infoPerson.GetValueOrDefault(item.name).ToString();
+
+        //        if (!item.data.ContainsKey(item.name) &&
+        //            !item.data.ContainsKey(var))
+        //        {
+        //            item.data.Add(var, true);
+        //        }
+        //    }
+        //}
 
         tongHopQuanNhanPanel.ShowListInfo();
     }
 
-    public async void Add(InfoPerson infoPerson)
+    void Add(int count, string c)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            dic.Add("ben ngoai", "ông ngoại: ... \nbà ngoại: ...");
+            dic.Add("ben noi", "ông nội: ... \nbà nội: ...");
+            dic.Add("benh ly", "Không");
+            dic.Add("cap bac", "Binh nhất");
+            dic.Add("cho di nuoc ngoai", "Không");
+            dic.Add("cho o hien nay", "Bạc Liêu");
+            dic.Add("chuc vu", "Chiến sĩ");
+            dic.Add("co ai la can bo", "Không");
+            dic.Add("da tung di nuoc ngoai", "Không");
+            dic.Add("don vi", c);
+            dic.Add("hinh xam", "Không");
+            dic.Add("ho ten cha", "...");
+            dic.Add("ho ten me", "...");
+            dic.Add("nam sinh cha", "1975");
+            dic.Add("nam sinh me", "1975");
+            dic.Add("nghe nghiep cha", "Làm nông");
+            dic.Add("nghe nghiep me", "Làm nông");
+            dic.Add("khieu nai", "Không");
+            dic.Add("kinh te gia dinh", "Đủ ăn");
+            dic.Add("ma tuy", "Không");
+            dic.Add("mo coi", "Không");
+            dic.Add("nam sinh", "");
+            dic.Add("ngay nhap ngu", "27/2/2024");
+            dic.Add("ngay vao doan", "");
+            dic.Add("ngay vao dang", "");
+            dic.Add("nghe nghiep", "Làm nông");
+            dic.Add("nguoi than di nuoc ngoai", "Không");
+            dic.Add("quan diem ve quan he dong gioi", "Không");
+            dic.Add("quan diem ve the che chinh tri", "Không");
+            dic.Add("que quan", "Bạc Liêu");
+            dic.Add("ten", "");
+            dic.Add("tham gia bieu tinh", "Không");
+            dic.Add("tham gia dang", "Không");
+            dic.Add("thong tin anh chi em", "...");
+            dic.Add("toa an", "Không");
+            dic.Add("trinh do van hoa", "9/12");
+            dic.Add("vo", "Không");
+            dic.Add("xu ly hanh chinh", "Không");
+
+            InfoPerson newInfo = new InfoPerson();
+            newInfo.infoPerson = new Dictionary<string, object>();
+            foreach (var item in dic)
+            {
+                var v = item.Value;
+                if (item.Key == "ten")
+                {
+                    List<string> s1 = new List<string>() { "Trần", "Nguyễn", "Phạm", "Phan", "Hồ", "Danh", "Lý", "Lê", "Đinh", "Võ", "Huỳnh", "Trương", "Bùi", "Đặng", "Đỗ", "Ngô", "Dương", "Trịnh" };
+                    List<string> s2 = new List<string>() { "Văn", "Phúc", "Quang", "Hoài", "Anh", "Tùng", "Bá", "Duy", "Việt", "Thanh", "Minh", "Ngọc", "Hồng", };
+                    List<string> s3 = new List<string>() { "Anh", "Tố", "Hữu", "Phú", "Quân", "Quang", "Đào", "Bằng", "Việt", "Long", "An", "Ân", "Bảo", "Nhân", "Minh", "Thái", "Cường", "Chu", "Giang", "Hoàng", "Hy", "Khôi", "Khải", "Lâm", "Linh", "Nhã", "Phúc", "Phương" };
+                    string ss1 = s1[Random.Range(0, s1.Count)];
+                    string ss2 = s2[Random.Range(0, s2.Count)];
+                    string ss3 = s3[Random.Range(0, s3.Count)];
+                    while (ss2 == ss3)
+                    {
+                        ss2 = s2[Random.Range(0, s2.Count)];
+                        ss3 = s3[Random.Range(0, s3.Count)];
+                    }
+                    v = $"{ss1} {ss2} {ss3}";
+                }
+                if (item.Key == "nam sinh")
+                {
+                    List<string> s1 = new List<string>() { "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005" };
+                    v = s1[Random.Range(0, s1.Count)];
+                }
+                newInfo.infoPerson.Add(item.Key, v);
+            }
+            Manager.Instance.Add(newInfo, false);
+        }
+    }
+    public async void Add(InfoPerson infoPerson, bool reload = true)
     {
         GameObject loading = Instantiate(Resources.Load("Loading Panel") as GameObject, GameObject.Find("Canvas").transform);
 
@@ -181,7 +305,10 @@ public class Manager : MonoBehaviour
 
         Destroy(loading);
 
-        ReloadAllInfo();
+        if (reload)
+        {
+            ReloadAllInfo();
+        }
     }
     //By The Way
     //ながえSTYLE
