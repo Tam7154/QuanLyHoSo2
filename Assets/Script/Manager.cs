@@ -48,6 +48,8 @@ public class Manager : MonoBehaviour
 
     public async void CheckForLogin(string us, string pw)
     {
+        GameObject loading = Instantiate(Resources.Load("Loading Panel") as GameObject, GameObject.Find("Canvas").transform);
+
         CollectionReference colRef = db.Collection("users");
 
         await colRef.GetSnapshotAsync().ContinueWithOnMainThread(task =>
@@ -72,6 +74,8 @@ public class Manager : MonoBehaviour
             }
         });
 
+        Destroy(loading);
+
         if (curUser != null)
         {
             StartQuanLy();
@@ -94,6 +98,8 @@ public class Manager : MonoBehaviour
 
     public async void ReloadAllInfo()
     {
+        GameObject loading = Instantiate(Resources.Load("Loading Panel") as GameObject, GameObject.Find("Canvas").transform);
+
         infoPerson = new List<InfoPerson>();
 
         // Truy cập vào collection và document
@@ -130,6 +136,8 @@ public class Manager : MonoBehaviour
             }
         });
 
+        Destroy(loading);
+
         //lay du lieu cho filter
         tongHopQuanNhanPanel.filters.ForEach(n => n.data.Clear());
 
@@ -152,6 +160,8 @@ public class Manager : MonoBehaviour
 
     public async void Add(InfoPerson infoPerson)
     {
+        GameObject loading = Instantiate(Resources.Load("Loading Panel") as GameObject, GameObject.Find("Canvas").transform);
+
         string newId = $"{infoPerson.infoPerson["ten"]}:{infoPerson.infoPerson["don vi"]}:{infoPerson.infoPerson["nam sinh"]}";
         DocumentReference docRef = db.Collection("ho so").Document(newId);
 
@@ -169,12 +179,17 @@ public class Manager : MonoBehaviour
             }
         });
 
+        Destroy(loading);
+
         ReloadAllInfo();
     }
-
+    //By The Way
+    //ながえSTYLE
 
     public async void Delete(string s)
     {
+        GameObject loading = Instantiate(Resources.Load("Loading Panel") as GameObject, GameObject.Find("Canvas").transform);
+
         await db.Collection("ho so").Document(s).DeleteAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsCompleted)
@@ -188,6 +203,8 @@ public class Manager : MonoBehaviour
                 NotificationManager.CreateNoti("Có lỗi xảy ra khi xóa hồ sơ.");
             }
         });
+
+        Destroy(loading);
 
         ReloadAllInfo();
     }

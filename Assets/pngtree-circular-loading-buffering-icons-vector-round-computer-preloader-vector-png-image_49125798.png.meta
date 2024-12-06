@@ -1,0 +1,411 @@
+fileFormatVersion: 2
+guid: 50aed6ca2b5a28e4a8a5b148a71b76a0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_0
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b444ad96a414d9a49801ac94f613ebdd
+      internalID: -473482553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_1
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b3cf05e879229447a27e2e80d9e4e9d
+      internalID: 1886043962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_2
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56032596bc2dba4597a9e22ecffef69
+      internalID: 1344591875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_3
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bccb33d8c3eb4974eb782051abd4daf8
+      internalID: 2101149807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_4
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0adeaa1ccf454604290d0f3b94ebfc5a
+      internalID: 1699912431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_5
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66791adcca89275418ab051dc79aac75
+      internalID: 361954467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_6
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 72
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf63c185ac00de449ac35cb0387fed3b
+      internalID: -895957832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_7
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 73
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5857c877089bd1b40857b7df196783c2
+      internalID: -1504039048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_8
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 73
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c21248711d7b5cb40a40b861f09f27c8
+      internalID: 70131098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_9
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 71
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31303daa70505a146a9d35e224263ef5
+      internalID: -137163940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_10
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 72
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a73eaba7f460704483c01add63674b7
+      internalID: 24022719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_11
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 72
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c851b0c33cc0214b9094839c51dcdd3
+      internalID: -521880278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_1: 1886043962
+      pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_2: 1344591875
+      pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_9: -137163940
+      pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_6: -895957832
+      pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_4: 1699912431
+      pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_5: 361954467
+      pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_8: 70131098
+      pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_10: 24022719
+      pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_11: -521880278
+      pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_0: -473482553
+      pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_3: 2101149807
+      pngtree-circular-loading-buffering-icons-vector-round-computer-preloader-vector-png-image_49125798_7: -1504039048
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
