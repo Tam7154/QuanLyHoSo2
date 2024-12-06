@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using Michsky.MUIP;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +13,7 @@ public class TongHopQuanNhanPanel : MonoBehaviour
     public Transform content;
 
     public List<Filter> filters;
+    public List<DropdownMultiSelect> dropdownMultiSelects;
 
     public void ShowInfo(InfoPerson infoPerson)
     {
@@ -43,14 +46,54 @@ public class TongHopQuanNhanPanel : MonoBehaviour
             Destroy(item.gameObject);
         }
 
-        foreach (var item in Manager.Instance.infoPerson)
+        List<InfoPerson> newInfo = Manager.Instance.infoPerson.ToList();
+        for (int i = 0; i < newInfo.Count; i++)
+        {
+            for (int j = i + 1; j < newInfo.Count; j++)
+            {
+                int c = int.Parse(newInfo[i].infoPerson.GetValueOrDefault("don vi").ToString().Substring(1));
+                int c2 = int.Parse(newInfo[j].infoPerson.GetValueOrDefault("don vi").ToString().Substring(1));
+                if (c > c2)
+                {
+                    int temp = c;
+                    newInfo[j].infoPerson["don vi"] = "c" + c;
+                    newInfo[i].infoPerson["don vi"] = "c" + c2;
+                }
+            }
+        }
+
+
+        foreach (var item in newInfo)
         {
             bool b = true;
-            foreach (var jtem in filters)
+            foreach (var jtem in item.infoPerson)
             {
-                if (!jtem.data[item.infoPerson[jtem.gameObject.name].ToString()])
+                foreach (var ntem in dropdownMultiSelects)
                 {
-                    b = false;
+                    if (jtem.Key == ntem.gameObject.name)
+                    {
+                        var v = jtem.Value;
+                        foreach (var mtem in ntem.items)
+                        {
+                            if (mtem.itemName == v.ToString() &&
+                                !mtem.isOn)
+                            {
+                                b = false;
+                                break;
+                            }
+                        }
+                        if (!b)
+                        {
+                            break;
+                        }
+                    }
+                    if (!b)
+                    {
+                        break;
+                    }
+                }
+                if (!b)
+                {
                     break;
                 }
             }
