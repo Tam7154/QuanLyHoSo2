@@ -10,19 +10,6 @@ using TMPro;
 using UnityEngine.UI;
 using Firebase;
 
-//load toàn bộ quân nhân
-//thêm quân nhân //
-//xóa quân nhân //
-//sửa quân nhân
-//filter //
-//đăng nhập
-//xuất excel
-
-//Aoyama%20Aina
-//SUKE-080
-//MILK-067
-//sayama love
-
 public class Manager : MonoBehaviour
 {
     public static Manager Instance { get; private set; }
@@ -52,22 +39,22 @@ public class Manager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            Add(5, "1");
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            Add(5, "2");
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            Add(5, "3");
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            Add(5, "4");
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    Add(5, "1");
+        //}
+        //if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    Add(5, "2");
+        //}
+        //if (Input.GetKeyDown(KeyCode.Alpha3))
+        //{
+        //    Add(5, "3");
+        //}
+        //if (Input.GetKeyDown(KeyCode.Alpha4))
+        //{
+        //    Add(5, "4");
+        //}
     }
 
     public async void CheckForLogin(string us, string pw)
@@ -396,6 +383,88 @@ public class Manager : MonoBehaviour
             dic.Add("so dien thoai anh chi em 3", "0900XXXX");
             dic.Add("so dien thoai anh chi em 4", "0900XXXX");
             dic.Add("so dien thoai anh chi em 5", "0900XXXX");
+
+            dic.Add("ho va ten ban gai", "Nguyễn XXX");
+            dic.Add("que quan ban gai", "Bạc Liêu");
+            dic.Add("nam sinh ban gai", "2000");
+            dic.Add("nghe nghiep ban gai", "2000");
+            dic.Add("so dien thoai ban gai", "0900XXX");
+
+            dic.Add("ho va ten ban trai", "Nguyễn XXX");
+            dic.Add("que quan ban trai", "Bạc Liêu");
+            dic.Add("nam sinh ban trai", "2000");
+            dic.Add("nghe nghiep ban trai", "2000");
+            dic.Add("so dien thoai ban trai", "0900XXX");
+
+            dic.Add("ho va ten ban gai than nhat", "");
+            dic.Add("nam sinh ban gai than nhat", "");
+            dic.Add("dia chi ban gai than nhat", "");
+            dic.Add("so dien thoai ban gai than nhat", "");
+
+            dic.Add("ho va ten ban trai than nhat", "");
+            dic.Add("nam sinh ban trai than nhat", "");
+            dic.Add("dia chi ban trai than nhat", "");
+            dic.Add("so dien thoai ban trai than nhat", "");
+
+            dic.Add("ai la nguoi anh huong tich cuc", "");
+
+            dic.Add("ho va ten can bo dia phuong 1", "");
+            dic.Add("chuc vu can bo dia phuong 1", "");
+            dic.Add("sdt can bo dia phuong 1", "");
+
+            dic.Add("ho va ten can bo dia phuong 2", "");
+            dic.Add("chuc vu can bo dia phuong 2", "");
+            dic.Add("sdt can bo dia phuong 2", "");
+
+            dic.Add("ho va ten can bo dia phuong 3", "");
+            dic.Add("chuc vu can bo dia phuong 3", "");
+            dic.Add("sdt can bo dia phuong 3", "");
+
+            dic.Add("ho va ten can bo dia phuong 4", "");
+            dic.Add("chuc vu can bo dia phuong 4", "");
+            dic.Add("sdt can bo dia phuong 4", "");
+
+            dic.Add("ho va ten can bo dia phuong 5", "");
+            dic.Add("chuc vu can bo dia phuong 5", "");
+            dic.Add("sdt can bo dia phuong 5", "");
+
+            dic.Add("lam gi o dau thoi gian truoc khi nhap ngu", "");
+            dic.Add("nghe nghiep truoc khi nhap ngu", "");
+            dic.Add("noi lam viec truoc khi nhap ngu", "");
+            dic.Add("thoi gian truoc khi nhap ngu", "");
+
+            dic.Add("quan he xa hoi truoc khi nhap ngu", "");
+            dic.Add("quan he xa hoi sau khi nhap ngu", "");
+
+            dic.Add("ho ten vo", "");
+            dic.Add("nam sinh vo", "");
+            dic.Add("sdt vo", "");
+            dic.Add("noi o hien nay vo", "");
+            dic.Add("suc khoe vo", "");
+            dic.Add("benh ly vo", "");
+            dic.Add("co con trai", "");
+            dic.Add("co con gai", "");
+            dic.Add("tinh hinh suc khoe cua con", "");
+
+            dic.Add("ho va ten cha vo", "");
+            dic.Add("nam sinh cha vo", "");
+            dic.Add("sdt cha vo", "");
+            dic.Add("nghe nghiep cha vo", "");
+            dic.Add("suc khoe cha vo", "");
+            dic.Add("noi o hien nay cha vo", "");
+
+            dic.Add("ho va ten me vo", "");
+            dic.Add("nam sinh me vo", "");
+            dic.Add("sdt me vo", "");
+            dic.Add("nghe nghiep me vo", "");
+            dic.Add("suc khoe me vo", "");
+            dic.Add("noi o hien nay me vo", "");
+
+            dic.Add("cha me vo sinh duoc", "");
+            dic.Add("cha me vo sinh duoc trai", "");
+            dic.Add("cha me vo sinh duoc gai", "");
+            dic.Add("vo dong chi la con thu", "");
+
 
             dic.Add("id", currentId.ToString());
 
