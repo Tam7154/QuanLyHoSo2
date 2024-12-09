@@ -15,7 +15,7 @@ public class TongHopQuanNhanPanel : MonoBehaviour
     public List<Filter> filters;
     public List<DropdownMultiSelect> dropdownMultiSelects;
 
-    public void ShowInfo(InfoPerson infoPerson)
+    public void ShowInfoPanel(InfoPerson infoPerson)
     {
         GameObject g = Instantiate(Resources.Load("Quan Nhan") as GameObject, GameObject.Find("Canvas").transform);
         Transform t = g.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0).transform;
@@ -24,8 +24,16 @@ public class TongHopQuanNhanPanel : MonoBehaviour
             Transform gg = t.Find(item.Key);
             if (gg != null)
             {
-                TextMeshProUGUI text = t.Find(item.Key).GetComponent<TextMeshProUGUI>();
-                text.text += ": " + item.Value;
+                if (item.Key.StartsWith("toggle"))
+                {
+                    Toggle toggle = t.Find(item.Key).GetComponent<Toggle>();
+                    toggle.isOn = bool.Parse(item.Value.ToString());
+                }
+                else
+                {
+                    TextMeshProUGUI text = t.Find(item.Key).GetComponent<TextMeshProUGUI>();
+                    text.text += " " + item.Value;
+                }
             }
         }
 
@@ -51,17 +59,16 @@ public class TongHopQuanNhanPanel : MonoBehaviour
         {
             for (int j = i + 1; j < newInfo.Count; j++)
             {
-                int c = int.Parse(newInfo[i].infoPerson.GetValueOrDefault("don vi").ToString().Substring(1));
-                int c2 = int.Parse(newInfo[j].infoPerson.GetValueOrDefault("don vi").ToString().Substring(1));
+                int c = int.Parse(newInfo[i].infoPerson.GetValueOrDefault("don vi").ToString());
+                int c2 = int.Parse(newInfo[j].infoPerson.GetValueOrDefault("don vi").ToString());
                 if (c > c2)
                 {
                     int temp = c;
-                    newInfo[j].infoPerson["don vi"] = "c" + c;
-                    newInfo[i].infoPerson["don vi"] = "c" + c2;
+                    newInfo[j].infoPerson["don vi"] = c;
+                    newInfo[i].infoPerson["don vi"] = c2;
                 }
             }
         }
-
 
         foreach (var item in newInfo)
         {
@@ -101,10 +108,10 @@ public class TongHopQuanNhanPanel : MonoBehaviour
             if (b)
             {
                 GameObject slot = Instantiate(Resources.Load("Slot in TongHopQuanNhan") as GameObject, content);
-                slot.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = item.infoPerson.GetValueOrDefault("ten").ToString();
+                slot.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = item.infoPerson.GetValueOrDefault("ho va ten").ToString();
                 slot.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.infoPerson.GetValueOrDefault("don vi").ToString();
                 slot.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = item.infoPerson.GetValueOrDefault("nam sinh").ToString();
-                slot.name = $"{item.infoPerson.GetValueOrDefault("ten")}:{item.infoPerson.GetValueOrDefault("don vi")}:{item.infoPerson.GetValueOrDefault("nam sinh")}";
+                slot.name = item.infoPerson.GetValueOrDefault("id").ToString();
                 slot.GetComponent<SlotInTongHopQuanNhan>().infoPerson = item;
             }
         }
@@ -143,23 +150,39 @@ public class TongHopQuanNhanPanel : MonoBehaviour
         }
         else
         {
-            GameObject g = Instantiate(Resources.Load("Edit QuanNhan") as GameObject, GameObject.Find("Canvas").transform.GetChild(0));
-
-            Transform t = g.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0).transform;
-            foreach (var item in curSelect.infoPerson.infoPerson)
+            if (curSelect)
             {
-                Transform gg = t.Find("ip " + item.Key);
-                if (gg != null)
+                GameObject g = Instantiate(Resources.Load("Edit QuanNhan") as GameObject, GameObject.Find("Canvas").transform.GetChild(0));
+
+                Transform t = g.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0).transform;
+                foreach (var item in curSelect.infoPerson.infoPerson)
                 {
-                    TMP_InputField ip = gg.GetComponent<TMP_InputField>();
-                    ip.text = item.Value.ToString();
+                    if (item.Key.StartsWith("toggle"))
+                    {
+                        Transform gg = t.Find(item.Key.ToString());
+                        Toggle toggle = gg.GetComponent<Toggle>();
+                        toggle.isOn = bool.Parse(item.Value.ToString());
+                    }
+                    else
+                    {
+                        Transform gg = t.Find("ip " + item.Key);
+                        if (gg != null)
+                        {
+                            TMP_InputField ip = gg.GetComponent<TMP_InputField>();
+                            ip.text = item.Value.ToString();
+                        }
+                    }
                 }
-            }
 
-            g.transform.GetChild(0).transform.Find("Close").GetComponent<Button>().onClick.AddListener(() =>
-            {
-                Destroy(g);
-            });
+                //g.transform.GetChild(0).transform.Find("Submit").GetComponent<Button>().onClick.AddListener(() =>
+                //{
+                //    g.transform.parent.parent.GetComponent<ThemHoSoQuanNhan>().SubmitEdit();
+                //});
+                g.transform.GetChild(0).transform.Find("Close").GetComponent<Button>().onClick.AddListener(() =>
+                {
+                    Destroy(g);
+                });
+            }
         }
     }
     public void Export()
