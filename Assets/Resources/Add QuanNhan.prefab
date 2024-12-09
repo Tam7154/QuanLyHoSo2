@@ -30878,7 +30878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 7554}
+  m_AnchoredPosition: {x: 0, y: 4657}
   m_SizeDelta: {x: 0, y: 10000}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1236827281099844927
@@ -81857,7 +81857,7 @@ GameObject:
   - component: {fileID: 1498122944127661355}
   - component: {fileID: 8523076336050098417}
   m_Layer: 5
-  m_Name: ip sau khi nhap ngu
+  m_Name: ip quan he xa hoi sau khi nhap ngu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94840,7 +94840,7 @@ GameObject:
   - component: {fileID: 2054414748981895053}
   - component: {fileID: 5430061805672922099}
   m_Layer: 5
-  m_Name: ip truoc khi nhap ngu
+  m_Name: ip quan he xa hoi truoc khi nhap ngu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
