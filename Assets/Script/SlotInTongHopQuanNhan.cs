@@ -19,11 +19,12 @@ public class SlotInTongHopQuanNhan : MonoBehaviour
     {
         if (Time.time - lastTime <= .2f)
         {
-            Manager.Instance.tongHopQuanNhanPanel.ShowInfo(infoPerson);
+            Manager.Instance.tongHopQuanNhanPanel.ShowInfoPanel(infoPerson);
+            lastTime = Time.time;
         }
         else
         {
-
+            lastTime = Time.time;
             if (tongHopQuanNhanPanel.curSelect)
             {
                 if (tongHopQuanNhanPanel.curSelect == this)
@@ -38,6 +39,5 @@ public class SlotInTongHopQuanNhan : MonoBehaviour
             GetComponent<Image>().color = Color.green;
             tongHopQuanNhanPanel.curSelect = this;
         }
-        lastTime = Time.time;
     }
 }
