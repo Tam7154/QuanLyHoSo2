@@ -39,22 +39,25 @@ public class Manager : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Alpha1))
-        //{
-        //    Add(5, "1");
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha2))
-        //{
-        //    Add(5, "2");
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha3))
-        //{
-        //    Add(5, "3");
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha4))
-        //{
-        //    Add(5, "4");
-        //}
+        if (curUser != null && int.Parse(curUser.levelControl.ToString()) == 1)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                Add(5, "1");
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                Add(5, "2");
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                Add(5, "3");
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                Add(5, "4");
+            }
+        }
     }
 
     public async void CheckForLogin(string us, string pw)
@@ -73,7 +76,7 @@ public class Manager : MonoBehaviour
                 foreach (DocumentSnapshot document in snapshot.Documents)
                 {
                     if (document.GetValue<string>("id") == us &&
-                    document.GetValue<string>("pw") == pw)
+                            document.GetValue<string>("pw") == pw)
                     {
                         Dictionary<string, object> dict = document.ToDictionary();
                         curUser = new UserInfo(dict);
@@ -499,7 +502,7 @@ public class Manager : MonoBehaviour
                 }
                 if (item.Key == "nam sinh")
                 {
-                    List<string> s1 = new List<string>() { "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005" };
+                    List<string> s1 = new List<string>() { "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005" };
                     v = s1[Random.Range(0, s1.Count)];
                 }
                 newInfo.infoPerson.Add(item.Key, v);
