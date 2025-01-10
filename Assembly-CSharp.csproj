@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{109C009B-E111-4E76-CE9E-CADB9BAA4EE6}</ProjectGuid>
+    <ProjectGuid>{32F8A9F6-E1B2-CAF3-A16E-ECF8B39F9D97}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -123,6 +123,7 @@
     <Compile Include="Assets\Modern UI Pack\Scripts\Context Menu\ContextMenuContentEditor.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Dropdown\CustomDropdown.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Window\WindowManagerEditor.cs" />
+    <Compile Include="Assets\Script\InfoQuanNhan.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\UI Manager\UIManagerSlider.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Slider\SliderManagerEditor.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Dropdown\DropdownMultiSelect.cs" />
@@ -143,6 +144,7 @@
     <Compile Include="Assets\Modern UI Pack\Scripts\Icon\IconManagerEditor.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Input Field\CustomInputField.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Tools\ElementTabbing.cs" />
+    <Compile Include="Assets\Script\Data.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Tooltip\TooltipContent.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\UI Manager\UIManagerCustom.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Horizontal Selector\HorizontalSelectorEditor.cs" />
@@ -158,47 +160,123 @@
     <Compile Include="Assets\Script\UserInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Packages\System.Security.Cryptography.Pkcs.8.0.1\lib\netstandard2.1\System.Security.Cryptography.Pkcs.xml" />
+    <None Include="Assets\Packages\System.ComponentModel.Annotations.4.6.0\version.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\Packages\System.Text.Encoding.CodePages.5.0.0\THIRD-PARTY-NOTICES.TXT" />
+    <None Include="Assets\Packages\System.Security.Principal.Windows.5.0.0\useSharedDesignerContext.txt" />
+    <None Include="Assets\Packages\System.Runtime.CompilerServices.Unsafe.5.0.0\useSharedDesignerContext.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppFirestore.dll" />
+    <None Include="Assets\Packages\NPOI.2.7.2\lib\netstandard2.1\NPOI.OpenXml4Net.xml" />
+    <None Include="Assets\StreamingAssets\share\x.txt" />
     <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppDatabase.dll" />
+    <None Include="Assets\Packages\System.Security.Cryptography.Xml.8.0.2\LICENSE.TXT" />
+    <None Include="Assets\Packages\System.Text.Encoding.CodePages.5.0.0\lib\netstandard2.0\System.Text.Encoding.CodePages.dll" />
+    <None Include="Assets\Packages\System.Security.Cryptography.Cng.5.0.0\useSharedDesignerContext.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\Packages\System.Security.Cryptography.Pkcs.8.0.1\THIRD-PARTY-NOTICES.TXT" />
+    <None Include="Assets\Packages\System.Text.Encoding.CodePages.5.0.0\version.txt" />
+    <None Include="Assets\Packages\System.Formats.Asn1.8.0.1\LICENSE.TXT" />
+    <None Include="Assets\Packages\System.Text.Encoding.CodePages.5.0.0\lib\netstandard2.0\System.Text.Encoding.CodePages.xml" />
     <None Include="Assets\Firebase\Plugins\Firebase.App.dll" />
+    <None Include="Assets\Packages\System.ComponentModel.Annotations.4.6.0\THIRD-PARTY-NOTICES.TXT" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\Packages\BouncyCastle.Cryptography.2.3.1\lib\netstandard2.0\BouncyCastle.Cryptography.dll" />
+    <None Include="Assets\Packages\System.Security.Cryptography.Cng.5.0.0\lib\netstandard2.1\System.Security.Cryptography.Cng.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\Packages\System.Text.Encoding.CodePages.5.0.0\LICENSE.TXT" />
+    <None Include="Assets\Packages\NPOI.2.7.2\Read Me.txt" />
+    <None Include="Assets\Packages\System.Security.Cryptography.Cng.5.0.0\LICENSE.TXT" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-firestore-unity\maven-metadata.xml" />
+    <None Include="Assets\Packages\System.ComponentModel.Annotations.4.6.0\lib\netstandard2.1\System.ComponentModel.Annotations.xml" />
     <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppAuth.dll" />
     <None Include="Assets\Firebase\Plugins\iOS\Firebase.Firestore.dll" />
+    <None Include="Assets\Packages\ExtendedNumerics.BigDecimal.2025.1001.2.129\lib\netstandard2.1\ExtendedNumerics.BigDecimal.xml" />
+    <None Include="Assets\Packages\System.Security.Principal.Windows.5.0.0\LICENSE.TXT" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Packages\System.Security.AccessControl.6.0.0\useSharedDesignerContext.txt" />
+    <None Include="Assets\Packages\Microsoft.IO.RecyclableMemoryStream.3.0.0\lib\netstandard2.1\Microsoft.IO.RecyclableMemoryStream.dll" />
     <None Include="Assets\Firebase\Plugins\Firebase.TaskExtension.dll" />
+    <None Include="Assets\Packages\System.Security.Cryptography.Cng.5.0.0\THIRD-PARTY-NOTICES.TXT" />
+    <None Include="Assets\Packages\NPOI.2.7.2\lib\netstandard2.1\NPOI.Core.xml" />
+    <None Include="Assets\Packages\SharpZipLib.1.4.2\lib\netstandard2.1\ICSharpCode.SharpZipLib.dll" />
+    <None Include="Assets\Packages\BouncyCastle.Cryptography.2.3.1\lib\netstandard2.0\BouncyCastle.Cryptography.xml" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-app-unity\maven-metadata.xml" />
     <None Include="Assets\Modern UI Pack\Read Me.txt" />
+    <None Include="Assets\Packages\System.Security.AccessControl.6.0.0\lib\netstandard2.0\System.Security.AccessControl.xml" />
+    <None Include="Assets\Packages\NPOI.2.7.2\lib\netstandard2.1\NPOI.OOXML.dll" />
+    <None Include="Assets\Packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll" />
     <None Include="Assets\Firebase\Plugins\Firebase.Auth.dll" />
     <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppApp-12_4_1.dll" />
+    <None Include="Assets\Packages\System.Security.AccessControl.6.0.0\LICENSE.TXT" />
+    <None Include="Assets\Packages\System.ComponentModel.Annotations.4.6.0\LICENSE.TXT" />
+    <None Include="Assets\Packages\SixLabors.Fonts.1.0.1\lib\netstandard2.1\SixLabors.Fonts.xml" />
+    <None Include="Assets\Packages\System.Security.AccessControl.6.0.0\lib\netstandard2.0\System.Security.AccessControl.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\Packages\System.Security.Cryptography.Xml.8.0.2\lib\netstandard2.0\System.Security.Cryptography.Xml.xml" />
+    <None Include="Assets\Packages\MathNet.Numerics.Signed.5.0.0\lib\netstandard2.0\MathNet.Numerics.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\Packages\System.Security.Cryptography.Xml.8.0.2\THIRD-PARTY-NOTICES.TXT" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\Firebase\Plugins\Firebase.Database.dll" />
+    <None Include="Assets\Packages\NPOI.2.7.2\lib\netstandard2.1\NPOI.OOXML.xml" />
+    <None Include="Assets\Packages\System.Formats.Asn1.8.0.1\THIRD-PARTY-NOTICES.TXT" />
+    <None Include="Assets\Packages\SixLabors.ImageSharp.2.1.9\lib\netstandard2.1\SixLabors.ImageSharp.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-auth-unity\maven-metadata.xml" />
+    <None Include="Assets\Packages\System.Security.Cryptography.Cng.5.0.0\lib\netstandard2.1\System.Security.Cryptography.Cng.xml" />
+    <None Include="Assets\Packages\System.Security.Cryptography.Pkcs.8.0.1\useSharedDesignerContext.txt" />
+    <None Include="Assets\Packages\System.Security.Principal.Windows.5.0.0\version.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Firebase\Plugins\iOS\Firebase.Auth.dll" />
+    <None Include="Assets\Packages\NPOI.2.7.2\lib\netstandard2.1\NPOI.Core.dll" />
+    <None Include="Assets\Packages\NPOI.2.7.2\lib\netstandard2.1\NPOI.OpenXmlFormats.xml" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Packages\System.Security.AccessControl.6.0.0\THIRD-PARTY-NOTICES.TXT" />
+    <None Include="Assets\Packages\System.Runtime.CompilerServices.Unsafe.5.0.0\LICENSE.TXT" />
     <None Include="Assets\Firebase\Plugins\Firebase.Firestore.dll" />
+    <None Include="Assets\Packages\SixLabors.ImageSharp.2.1.9\lib\netstandard2.1\SixLabors.ImageSharp.dll" />
+    <None Include="Assets\Packages\Enums.NET.4.0.1\lib\netstandard2.1\Enums.NET.dll" />
+    <None Include="Assets\Packages\MathNet.Numerics.Signed.5.0.0\lib\netstandard2.0\MathNet.Numerics.xml" />
+    <None Include="Assets\Packages\System.Formats.Asn1.8.0.1\lib\netstandard2.0\System.Formats.Asn1.xml" />
     <None Include="Assets\Firebase\Plugins\iOS\Firebase.Database.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Packages\System.Security.Cryptography.Xml.8.0.2\lib\netstandard2.0\System.Security.Cryptography.Xml.dll" />
+    <None Include="Assets\Packages\System.Security.Cryptography.Pkcs.8.0.1\lib\netstandard2.1\System.Security.Cryptography.Pkcs.dll" />
+    <None Include="Assets\Packages\NPOI.2.7.2\lib\netstandard2.1\NPOI.OpenXml4Net.dll" />
+    <None Include="Assets\Packages\System.ComponentModel.Annotations.4.6.0\lib\netstandard2.1\System.ComponentModel.Annotations.dll" />
     <None Include="Assets\Firebase\Plugins\Firebase.Platform.dll" />
+    <None Include="Assets\Packages\System.Runtime.CompilerServices.Unsafe.5.0.0\version.txt" />
+    <None Include="Assets\Packages\System.Security.Principal.Windows.5.0.0\lib\netstandard2.0\System.Security.Principal.Windows.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-database-unity\maven-metadata.xml" />
+    <None Include="Assets\Packages\System.Security.Principal.Windows.5.0.0\lib\netstandard2.0\System.Security.Principal.Windows.dll" />
+    <None Include="Assets\Packages\System.Security.Principal.Windows.5.0.0\THIRD-PARTY-NOTICES.TXT" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\Packages\SharpZipLib.1.4.2\lib\netstandard2.1\ICSharpCode.SharpZipLib.xml" />
     <None Include="Assets\Firebase\Plugins\Google.MiniJson.dll" />
+    <None Include="Assets\Packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.xml" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\Packages\System.Formats.Asn1.8.0.1\lib\netstandard2.0\System.Formats.Asn1.dll" />
+    <None Include="Assets\Packages\ExtendedNumerics.BigDecimal.2025.1001.2.129\lib\netstandard2.1\ExtendedNumerics.BigDecimal.dll" />
+    <None Include="Assets\Packages\NPOI.2.7.2\lib\netstandard2.1\NPOI.OpenXmlFormats.dll" />
+    <None Include="Assets\Packages\Microsoft.IO.RecyclableMemoryStream.3.0.0\lib\netstandard2.1\Microsoft.IO.RecyclableMemoryStream.xml" />
+    <None Include="Assets\Packages\SixLabors.Fonts.1.0.1\lib\netstandard2.1\SixLabors.Fonts.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Packages\System.ComponentModel.Annotations.4.6.0\useSharedDesignerContext.txt" />
+    <None Include="Assets\Packages\System.Formats.Asn1.8.0.1\useSharedDesignerContext.txt" />
+    <None Include="Assets\Packages\System.Runtime.CompilerServices.Unsafe.5.0.0\THIRD-PARTY-NOTICES.TXT" />
     <None Include="Assets\Firebase\Plugins\iOS\Firebase.App.dll" />
+    <None Include="Assets\Packages\System.Security.Cryptography.Xml.8.0.2\useSharedDesignerContext.txt" />
+    <None Include="Assets\Packages\System.Security.Cryptography.Pkcs.8.0.1\LICENSE.TXT" />
+    <None Include="Assets\Packages\System.Security.Cryptography.Cng.5.0.0\version.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\Packages\System.Text.Encoding.CodePages.5.0.0\useSharedDesignerContext.txt" />
+    <None Include="Assets\Packages\Enums.NET.4.0.1\lib\netstandard2.1\Enums.NET.xml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -444,14 +522,20 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>D:\Unity\Hub\Editor\2021.3.9f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Cecil.Pdb">
-      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>Assets\Packages\NPOI.2.7.2\lib\netstandard2.1\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations">
+      <HintPath>Assets\Packages\System.ComponentModel.Annotations.4.6.0\lib\netstandard2.1\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.App">
       <HintPath>Assets\Firebase\Plugins\Firebase.App.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Enums.NET">
+      <HintPath>Assets\Packages\Enums.NET.4.0.1\lib\netstandard2.1\Enums.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Pkcs">
+      <HintPath>Assets\Packages\System.Security.Cryptography.Pkcs.8.0.1\lib\netstandard2.1\System.Security.Cryptography.Pkcs.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Firestore">
       <HintPath>Assets\Firebase\Plugins\Firebase.Firestore.dll</HintPath>
@@ -459,14 +543,68 @@
     <Reference Include="Firebase.Database">
       <HintPath>Assets\Firebase\Plugins\Firebase.Database.dll</HintPath>
     </Reference>
+    <Reference Include="System.Security.AccessControl">
+      <HintPath>Assets\Packages\System.Security.AccessControl.6.0.0\lib\netstandard2.0\System.Security.AccessControl.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Burst.Unsafe">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Cecil.Mdb">
-      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>Assets\Packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.TaskExtension">
       <HintPath>Assets\Firebase\Plugins\Firebase.TaskExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.Core">
+      <HintPath>Assets\Packages\NPOI.2.7.2\lib\netstandard2.1\NPOI.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.ImageSharp">
+      <HintPath>Assets\Packages\SixLabors.ImageSharp.2.1.9\lib\netstandard2.1\SixLabors.ImageSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>Assets\Packages\NPOI.2.7.2\lib\netstandard2.1\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml">
+      <HintPath>Assets\Packages\System.Security.Cryptography.Xml.8.0.2\lib\netstandard2.0\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics">
+      <HintPath>Assets\Packages\MathNet.Numerics.Signed.5.0.0\lib\netstandard2.0\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows">
+      <HintPath>Assets\Packages\System.Security.Principal.Windows.5.0.0\lib\netstandard2.0\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtendedNumerics.BigDecimal">
+      <HintPath>Assets\Packages\ExtendedNumerics.BigDecimal.2025.1001.2.129\lib\netstandard2.1\ExtendedNumerics.BigDecimal.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>Assets\Packages\NPOI.2.7.2\lib\netstandard2.1\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Pdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream">
+      <HintPath>Assets\Packages\Microsoft.IO.RecyclableMemoryStream.3.0.0\lib\netstandard2.1\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages">
+      <HintPath>Assets\Packages\System.Text.Encoding.CodePages.5.0.0\lib\netstandard2.0\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>Assets\Packages\SharpZipLib.1.4.2\lib\netstandard2.1\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Cryptography">
+      <HintPath>Assets\Packages\BouncyCastle.Cryptography.2.3.1\lib\netstandard2.0\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Formats.Asn1">
+      <HintPath>Assets\Packages\System.Formats.Asn1.8.0.1\lib\netstandard2.0\System.Formats.Asn1.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Mdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
@@ -477,8 +615,11 @@
     <Reference Include="Unity.Burst.Cecil.Rocks">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    <Reference Include="System.Security.Cryptography.Cng">
+      <HintPath>Assets\Packages\System.Security.Cryptography.Cng.5.0.0\lib\netstandard2.1\System.Security.Cryptography.Cng.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.Fonts">
+      <HintPath>Assets\Packages\SixLabors.Fonts.1.0.1\lib\netstandard2.1\SixLabors.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Platform">
       <HintPath>Assets\Firebase\Plugins\Firebase.Platform.dll</HintPath>
@@ -893,6 +1034,9 @@
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGetForUnity">
+      <HintPath>Library\ScriptAssemblies\NuGetForUnity.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>

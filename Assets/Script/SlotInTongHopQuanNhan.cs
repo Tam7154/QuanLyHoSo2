@@ -8,6 +8,7 @@ public class SlotInTongHopQuanNhan : MonoBehaviour
 
     TongHopQuanNhanPanel tongHopQuanNhanPanel;
     public InfoPerson infoPerson;
+    public InfoMember infoMember;
 
     float lastTime;
     private void Start()
@@ -19,7 +20,8 @@ public class SlotInTongHopQuanNhan : MonoBehaviour
     {
         if (Time.time - lastTime <= .2f)
         {
-            Manager.Instance.tongHopQuanNhanPanel.ShowInfoPanel(infoPerson);
+            Manager.Instance.tongHopQuanNhanPanel.ShowInfoPanel(infoMember);
+            //Manager.Instance.tongHopQuanNhanPanel.ShowInfoPanel(infoPerson);
             lastTime = Time.time;
         }
         else
