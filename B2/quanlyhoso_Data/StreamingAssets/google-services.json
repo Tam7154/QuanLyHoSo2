@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "592406312286",
+    "firebase_url": "https://quan-ly-ho-so-quan-nhan-default-rtdb.firebaseio.com",
+    "project_id": "quan-ly-ho-so-quan-nhan",
+    "storage_bucket": "quan-ly-ho-so-quan-nhan.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592406312286:android:f10aa3f2ff56a17b038bcf",
+        "android_client_info": {
+          "package_name": "com.dtam.quanlyhoso"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYleaRrHHAOCYxgVOb4TaqooR7CrF0CSs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
