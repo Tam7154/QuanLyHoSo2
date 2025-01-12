@@ -31,7 +31,6 @@ public class TongHopQuanNhanPanel : MonoBehaviour
 
         foreach (var item in map)
         {
-            print(item.Key);
             Transform gg = t.Find(item.Key.ToLower());
             if (gg != null)
             {
@@ -102,7 +101,6 @@ public class TongHopQuanNhanPanel : MonoBehaviour
         {
             Destroy(item.gameObject);
         }
-
 
         foreach (var item in Manager.Instance.infoMembers.members)
         {
@@ -280,7 +278,8 @@ public class TongHopQuanNhanPanel : MonoBehaviour
     }
     public void Delete()
     {
-        if (int.Parse(Manager.Instance.curUser.levelControl) >= 3)
+        #region use LAN
+        if (int.Parse(Manager.Instance.currentAccount.role) >= 3)
         {
             NotificationManager.CreateNoti("Quyền hạn của bạn chưa đủ!");
         }
@@ -288,13 +287,28 @@ public class TongHopQuanNhanPanel : MonoBehaviour
         {
             if (curSelect != null)
             {
-                Manager.Instance.Delete(curSelect.name);
+                Manager.Instance.Delete(curSelect.infoMember);
             }
         }
+        #endregion
+        #region use gg
+        //if (int.Parse(Manager.Instance.curUser.levelControl) >= 3)
+        //{
+        //    NotificationManager.CreateNoti("Quyền hạn của bạn chưa đủ!");
+        //}
+        //else
+        //{
+        //    if (curSelect != null)
+        //    {
+        //        Manager.Instance.Delete(curSelect.infoMember);
+        //    }
+        //}
+        #endregion
     }
     public void Edit()
     {
-        if (int.Parse(Manager.Instance.curUser.levelControl) >= 3)
+        #region use LAN
+        if (int.Parse(Manager.Instance.currentAccount.role) >= 3)
         {
             NotificationManager.CreateNoti("Quyền hạn của bạn chưa đủ!");
         }
@@ -302,15 +316,29 @@ public class TongHopQuanNhanPanel : MonoBehaviour
         {
             if (curSelect)
             {
+                string id = "";
+
                 GameObject g = Instantiate(Resources.Load("Edit QuanNhan") as GameObject, GameObject.Find("Canvas").transform.GetChild(0));
+                g.GetComponent<ThemHoSoQuanNhan>().infoMember = curSelect.infoMember;
 
                 Transform t = g.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0).transform;
-                foreach (var item in curSelect.infoPerson.infoPerson)
+
+                Dictionary<string, string> map = new Dictionary<string, string>();
+                for (int i = 0; i < curSelect.infoMember.nameInfo.Count; i++)
+                {
+                    if (curSelect.infoMember.nameInfo[i] == "id")
+                    {
+                        id = curSelect.infoMember.info[i];
+                        continue;
+                    }
+                    map.Add(curSelect.infoMember.nameInfo[i], curSelect.infoMember.info[i]);
+                }
+
+                foreach (var item in map)
                 {
                     if (item.Key.StartsWith("toggle"))
                     {
-                        Transform gg = t.Find(item.Key.ToString());
-                        Toggle toggle = gg.GetComponent<Toggle>();
+                        Toggle toggle = t.Find(item.Key).GetComponent<Toggle>();
                         toggle.isOn = bool.Parse(item.Value.ToString());
                     }
                     else
@@ -321,12 +349,18 @@ public class TongHopQuanNhanPanel : MonoBehaviour
                             TMP_InputField ip = gg.GetComponent<TMP_InputField>();
                             ip.text = item.Value.ToString();
                         }
+                        else
+                        {
+                            Debug.LogError("no input field: " + item.Key);
+                        }
+                        //TextMeshProUGUI text = t.Find(item.Key).GetComponent<TextMeshProUGUI>();
+                        //text.text += " " + item.Value;
                     }
                 }
 
                 //g.transform.GetChild(0).transform.Find("Submit").GetComponent<Button>().onClick.AddListener(() =>
                 //{
-                //    g.transform.parent.parent.GetComponent<ThemHoSoQuanNhan>().SubmitEdit();
+                    //g.transform.parent.parent.GetComponent<ThemHoSoQuanNhan>().SubmitEdit(id);
                 //});
                 g.transform.GetChild(0).transform.Find("Close").GetComponent<Button>().onClick.AddListener(() =>
                 {
@@ -334,5 +368,54 @@ public class TongHopQuanNhanPanel : MonoBehaviour
                 });
             }
         }
+        #endregion
+
+        #region use gg
+        //if (int.Parse(Manager.Instance.curUser.levelControl) >= 3)
+        //{
+        //    NotificationManager.CreateNoti("Quyền hạn của bạn chưa đủ!");
+        //}
+        //else
+        //{
+        //    if (curSelect)
+        //    {
+        //        GameObject g = Instantiate(Resources.Load("Edit QuanNhan") as GameObject, GameObject.Find("Canvas").transform.GetChild(0));
+
+        //        Transform t = g.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0).transform;
+        //        foreach (var item in curSelect.infoPerson.infoPerson)
+        //        {
+        //            if (item.Key.StartsWith("toggle"))
+        //            {
+        //                Transform gg = t.Find(item.Key.ToString());
+        //                Toggle toggle = gg.GetComponent<Toggle>();
+        //                toggle.isOn = bool.Parse(item.Value.ToString());
+        //            }
+        //            else
+        //            {
+        //                Transform gg = t.Find("ip " + item.Key);
+        //                if (gg != null)
+        //                {
+        //                    TMP_InputField ip = gg.GetComponent<TMP_InputField>();
+        //                    ip.text = item.Value.ToString();
+        //                }
+        //            }
+        //        }
+
+        //        //g.transform.GetChild(0).transform.Find("Submit").GetComponent<Button>().onClick.AddListener(() =>
+        //        //{
+        //        //    g.transform.parent.parent.GetComponent<ThemHoSoQuanNhan>().SubmitEdit();
+        //        //});
+        //        g.transform.GetChild(0).transform.Find("Close").GetComponent<Button>().onClick.AddListener(() =>
+        //        {
+        //            Destroy(g);
+        //        });
+        //    }
+        //}
+        #endregion
+    }
+
+    public void Export()
+    {
+        NotificationManager.CreateNoti("Chức năng đang phát triển!");
     }
 }

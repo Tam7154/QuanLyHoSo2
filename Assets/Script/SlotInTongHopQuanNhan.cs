@@ -7,7 +7,11 @@ public class SlotInTongHopQuanNhan : MonoBehaviour
 {
 
     TongHopQuanNhanPanel tongHopQuanNhanPanel;
+
+    [Header("gg")]
     public InfoPerson infoPerson;
+
+    [Header("LAN")]
     public InfoMember infoMember;
 
     float lastTime;
