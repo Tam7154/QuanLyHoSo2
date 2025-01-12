@@ -40,6 +40,7 @@ public class Manager : MonoBehaviour
 
     public int currentId = 0;
 
+    public SystemData systemData;
 
     public string URL = "http://localhost:3001/";
     private readonly HttpClient _httpClient = new HttpClient();
@@ -50,7 +51,6 @@ public class Manager : MonoBehaviour
     public InfoAccount currentAccount;
 
     public InfoMembers infoMembers;
-
 
     [Header("path")]
     string path1 = @"\\192.168.1.10\share file";
@@ -74,7 +74,7 @@ public class Manager : MonoBehaviour
 
         GetAccInfo();
         StartLogin();
-        //Initialize();
+        Initialize();
 
         //string path = @"\\192.168.1.10\share file\account.txt";
         //string path = @"\\C2\z\z.txt";
@@ -189,18 +189,18 @@ public class Manager : MonoBehaviour
         {
             Add(1, "1");
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            ReloadAllInfo();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            string path = @"\\192.168.1.10\share file\z.txt";
-            print(File.Exists(path));
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    ReloadAllInfo();
+        //}
+        //if (Input.GetKeyDown(KeyCode.Alpha3))
+        //{
+        //    string path = @"\\192.168.1.10\share file\z.txt";
+        //    print(File.Exists(path));
+        //}
+        //if (Input.GetKeyDown(KeyCode.Alpha4))
+        //{
+        //}
 
         //if (Input.GetKeyDown(KeyCode.Alpha1))
         //{
@@ -346,6 +346,22 @@ public class Manager : MonoBehaviour
     }
     void Initialize()
     {
+        #region use LAN
+
+        string content = File.ReadAllText(path1 + "\\system.txt");
+        if (string.IsNullOrEmpty(content))
+        {
+            systemData.currentId = "1";
+            print("A");
+        }
+        else
+        {
+            systemData = JsonUtility.FromJson<SystemData>(content);
+            print(content);
+        }
+        #endregion
+
+        #region use gg
         db = FirebaseFirestore.DefaultInstance;
 
         foreach (var item in tongHopQuanNhanPanel.dropdownMultiSelects)
@@ -355,6 +371,19 @@ public class Manager : MonoBehaviour
                 tongHopQuanNhanPanel.ShowListInfo();
             });
         }
+        #endregion
+    }
+
+    private void OnDestroy()
+    {
+        SaveSystemData();
+    }
+
+    void SaveSystemData()
+    {
+        #region use LAN
+        Data.Save(path1 + "\\members.txt", systemData);
+        #endregion
     }
     public void StartQuanLy()
     {
@@ -546,15 +575,14 @@ public class Manager : MonoBehaviour
 
             infoMembers.members.Add(infoMember);
 
-            var json = JsonUtility.ToJson(infoMembers);
-
-            File.WriteAllText(path, json);
+            Data.Save(path, infoMembers);
         }
         else
         {
             print("File no exist to add members");
         }
 
+        ReloadAllInfo();
         #endregion
 
         #region use gg
@@ -767,7 +795,7 @@ public class Manager : MonoBehaviour
         //    dic.Add("quan he xa hoi truoc khi nhap ngu", "");
         //    dic.Add("quan he xa hoi sau khi nhap ngu", "");
 
-        //    dic.Add("ho ten vo", "");
+        //    dic.Add("ho va ten vo", "");
         //    dic.Add("nam sinh vo", "");
         //    dic.Add("sdt vo", "");
         //    dic.Add("noi o hien nay vo", "");
@@ -1052,7 +1080,7 @@ public class Manager : MonoBehaviour
             dic.Add("quan he xa hoi truoc khi nhap ngu", "");
             dic.Add("quan he xa hoi sau khi nhap ngu", "");
 
-            dic.Add("ho ten vo", "");
+            dic.Add("ho va ten vo", "");
             dic.Add("nam sinh vo", "");
             dic.Add("sdt vo", "");
             dic.Add("noi o hien nay vo", "");
@@ -1189,9 +1217,9 @@ public class Manager : MonoBehaviour
 
         dic.Add("dan toc", "Kinh");
 
-        dic.Add("dia chi khi di phep_tranh thu", "Bạc Liêu");
+        dic.Add("dia chi khi di phep, tranh thu", "Bạc Liêu");
 
-        dic.Add("hien nay cha_me dang o dau", "Ở chung");
+        dic.Add("hien nay cha, me dang o dau", "Ở chung");
 
         dic.Add("hinh the", "1m70, 55kg");
 
@@ -1281,7 +1309,7 @@ public class Manager : MonoBehaviour
         dic.Add("toggle di hoc sy quan", "false");
         dic.Add("toggle di hoc sy quan du bi", "false");
         dic.Add("toggle duoc di hoc chuyen mon ky thuat", "false");
-        dic.Add("toggle duoc di hoc tieu doi truong khau doi truong", "false");
+        dic.Add("toggle duoc di hoc tieu doi truong, khau doi truong", "false");
         dic.Add("toggle ket nap vao dang", "false");
         dic.Add("toggle ra quan khi het nghia vu", "true");
 
@@ -1374,7 +1402,7 @@ public class Manager : MonoBehaviour
         dic.Add("quan he xa hoi truoc khi nhap ngu", "");
         dic.Add("quan he xa hoi sau khi nhap ngu", "");
 
-        dic.Add("ho ten vo", "");
+        dic.Add("ho va ten vo", "");
         dic.Add("nam sinh vo", "");
         dic.Add("sdt vo", "");
         dic.Add("noi o hien nay vo", "");
@@ -1402,6 +1430,11 @@ public class Manager : MonoBehaviour
         dic.Add("cha me vo sinh duoc trai", "");
         dic.Add("cha me vo sinh duoc gai", "");
         dic.Add("vo dong chi la con thu", "");
+
+        dic.Add("id", systemData.currentId);
+        int parseCurrentId = int.Parse(systemData.currentId);
+        parseCurrentId++;
+        systemData.currentId = parseCurrentId.ToString();
 
         string namePer = "";
         List<string> s1 = new List<string>() { "Trần", "Nguyễn", "Phạm", "Phan", "Hồ", "Danh", "Lý", "Lê", "Đinh", "Võ", "Huỳnh", "Trương", "Bùi", "Đặng", "Đỗ", "Ngô", "Dương", "Trịnh" };
@@ -1638,7 +1671,7 @@ public class Manager : MonoBehaviour
             dic.Add("quan he xa hoi truoc khi nhap ngu", "");
             dic.Add("quan he xa hoi sau khi nhap ngu", "");
 
-            dic.Add("ho ten vo", "");
+            dic.Add("ho va ten vo", "");
             dic.Add("nam sinh vo", "");
             dic.Add("sdt vo", "");
             dic.Add("noi o hien nay vo", "");
@@ -1760,9 +1793,16 @@ public class Manager : MonoBehaviour
         //print(s.Result);
     }
 
+    public void Add(InfoMember infoMember)
+    {
+        infoMembers.members.Add(infoMember);
+        Data.Save(path1 + "\\members.txt", infoMembers);
+        ReloadAllInfo();
+    }
+
     public async Task Add(InfoPerson infoPerson, bool reload = true)
     {
-        GameObject loading = Instantiate(Resources.Load("Loading Panel") as GameObject, GameObject.Find("Canvas").transform);
+        //GameObject loading = Instantiate(Resources.Load("Loading Panel") as GameObject, GameObject.Find("Canvas").transform);
 
         //string newId = $"{infoPerson.infoPerson["ten"]}:{infoPerson.infoPerson["don vi"]}:{infoPerson.infoPerson["nam sinh"]}";
         //DocumentReference docRef = db.Collection("ho so").Document(newId);
@@ -1818,25 +1858,36 @@ public class Manager : MonoBehaviour
         }
     }
 
+    public async void Delete(InfoMember infoMember)
+    {
+        #region use LAN
+        Manager.Instance.infoMembers.members.Remove(infoMember);
+        Data.Save(path1 + "\\members.txt", infoMembers);
+        #endregion
+        ReloadAllInfo();
+    }
+
     public async void Delete(string s)
     {
-        GameObject loading = Instantiate(Resources.Load("Loading Panel") as GameObject, GameObject.Find("Canvas").transform);
+        #region use gg
+        //GameObject loading = Instantiate(Resources.Load("Loading Panel") as GameObject, GameObject.Find("Canvas").transform);
 
-        await db.Collection("ho so").Document(s).DeleteAsync().ContinueWithOnMainThread(task =>
-        {
-            if (task.IsCompleted)
-            {
-                Debug.Log($"Tài liệu {s} đã bị xóa.");
-                NotificationManager.CreateNoti($"Hồ sơ {s} đã bị xóa.");
-            }
-            else
-            {
-                Debug.LogError("Có lỗi xảy ra khi xóa tài liệu: " + task.Exception);
-                NotificationManager.CreateNoti("Có lỗi xảy ra khi xóa hồ sơ.");
-            }
-        });
+        //await db.Collection("ho so").Document(s).DeleteAsync().ContinueWithOnMainThread(task =>
+        //{
+        //    if (task.IsCompleted)
+        //    {
+        //        Debug.Log($"Tài liệu {s} đã bị xóa.");
+        //        NotificationManager.CreateNoti($"Hồ sơ {s} đã bị xóa.");
+        //    }
+        //    else
+        //    {
+        //        Debug.LogError("Có lỗi xảy ra khi xóa tài liệu: " + task.Exception);
+        //        NotificationManager.CreateNoti("Có lỗi xảy ra khi xóa hồ sơ.");
+        //    }
+        //});
 
-        Destroy(loading);
+        //Destroy(loading);
+        #endregion
 
         ReloadAllInfo();
     }
