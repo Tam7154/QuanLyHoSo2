@@ -53,8 +53,8 @@ public class Manager : MonoBehaviour
     public InfoMembers infoMembers;
 
     [Header("path")]
-    string path1 = @"\\LAPTOP-K8JJVH7S\share file";
-    //string path1 = @"\\192.168.1.10\share file";
+    //string path1 = @"\\LAPTOP-K8JJVH7S\share file";
+    string path1 = @"\\192.168.1.10\share file";
     string path2 = @"\\192.168.1.11\share file";
     string path3 = @"\\192.168.1.12\share file";
 
