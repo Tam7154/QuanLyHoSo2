@@ -109,13 +109,49 @@ public class TongHopQuanNhanPanel : MonoBehaviour
             {
                 infoDic.Add(item.nameInfo[i], item.info[i]);
             }
-            GameObject slot = Instantiate(Resources.Load("Slot in TongHopQuanNhan") as GameObject, content);
-            slot.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = infoDic.GetValueOrDefault("ho va ten");
-            slot.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = infoDic.GetValueOrDefault("don vi").ToString();
-            slot.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = infoDic.GetValueOrDefault("nam sinh").ToString();
-            //slot.name = infoDic.GetValueOrDefault("id").ToString();
-            slot.GetComponent<SlotInTongHopQuanNhan>().infoMember = item;
 
+            bool b = true;
+            foreach (var jtem in infoDic)
+            {
+                foreach (var ntem in dropdownMultiSelects)
+                {
+                    if (jtem.Key == ntem.gameObject.name)
+                    {
+                        var v = jtem.Value;
+                        foreach (var mtem in ntem.items)
+                        {
+                            if (mtem.itemName == v.ToString() &&
+                                !mtem.isOn)
+                            {
+                                b = false;
+                                break;
+                            }
+                        }
+                        if (!b)
+                        {
+                            break;
+                        }
+                    }
+                    if (!b)
+                    {
+                        break;
+                    }
+                }
+                if (!b)
+                {
+                    break;
+                }
+            }
+
+            if (b)
+            {
+                GameObject slot = Instantiate(Resources.Load("Slot in TongHopQuanNhan") as GameObject, content);
+                slot.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = infoDic.GetValueOrDefault("ho va ten");
+                slot.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = infoDic.GetValueOrDefault("don vi").ToString();
+                slot.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = infoDic.GetValueOrDefault("nam sinh").ToString();
+                //slot.name = infoDic.GetValueOrDefault("id").ToString();
+                slot.GetComponent<SlotInTongHopQuanNhan>().infoMember = item;
+            }
         }
 
 
@@ -360,7 +396,7 @@ public class TongHopQuanNhanPanel : MonoBehaviour
 
                 //g.transform.GetChild(0).transform.Find("Submit").GetComponent<Button>().onClick.AddListener(() =>
                 //{
-                    //g.transform.parent.parent.GetComponent<ThemHoSoQuanNhan>().SubmitEdit(id);
+                //g.transform.parent.parent.GetComponent<ThemHoSoQuanNhan>().SubmitEdit(id);
                 //});
                 g.transform.GetChild(0).transform.Find("Close").GetComponent<Button>().onClick.AddListener(() =>
                 {
