@@ -41,6 +41,7 @@ public class ThemHoSoQuanNhan : MonoBehaviour
         }
 
         Manager.Instance.Add(newMember);
+        Destroy(gameObject);
         #endregion
 
 
@@ -111,6 +112,7 @@ public class ThemHoSoQuanNhan : MonoBehaviour
         //    }
         //}
         Manager.Instance.ReloadAllInfo();
+        Destroy(gameObject);
         #endregion
         #region use gg
         //InfoPerson newInfo = new InfoPerson();

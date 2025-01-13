@@ -53,7 +53,8 @@ public class Manager : MonoBehaviour
     public InfoMembers infoMembers;
 
     [Header("path")]
-    string path1 = @"\\192.168.1.10\share file";
+    string path1 = @"\\LAPTOP-K8JJVH7S\share file";
+    //string path1 = @"\\192.168.1.10\share file";
     string path2 = @"\\192.168.1.11\share file";
     string path3 = @"\\192.168.1.12\share file";
 
@@ -93,14 +94,15 @@ public class Manager : MonoBehaviour
 
     void GetAccInfo()
     {
-        string path = @"\\192.168.1.10\share file\account.txt";
+        string path = $"{path1}\\account.txt";
+        //string path = @"\\192.168.1.10\share file\account.txt";
         if (File.Exists(path))
         {
             // Đọc nội dung của file
-            string fileContent = File.ReadAllText(path);
+            //string fileContent = File.ReadAllText(path);
             //Debug.Log("File content: " + fileContent);
-
-            accounts = JsonUtility.FromJson<Accounts>(fileContent);
+            //accounts = JsonUtility.FromJson<Accounts>(fileContent);
+            accounts = Data.Load<Accounts>(path);
         }
         else
         {
@@ -185,22 +187,54 @@ public class Manager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1) && currentAccount.id == "god")
         {
             Add(1, "1");
+            //Accounts accounts = new Accounts();
+            //accounts.accounts = new List<InfoAccount>();
+            //accounts.accounts.Add(new InfoAccount()
+            //{
+            //    id = "admin",
+            //    password = "admin",
+            //    role = "2",
+            //});
+
+            //accounts.accounts.Add(new InfoAccount()
+            //{
+            //    id = "le long",
+            //    password = "le long",
+            //    role = "2",
+            //});
+
+            //accounts.accounts.Add(new InfoAccount()
+            //{
+            //    id = "le tam",
+            //    password = "le tam",
+            //    role = "3",
+            //});
+
+            //accounts.accounts.Add(new InfoAccount()
+            //{
+            //    id = "god",
+            //    password = "god",
+            //    role = "1",
+            //});
+
+            //string path = $"{path1}\\account.txt";
+            //Data.Save(path, accounts);
         }
-        //if (Input.GetKeyDown(KeyCode.Alpha2))
-        //{
-        //    ReloadAllInfo();
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha3))
-        //{
-        //    string path = @"\\192.168.1.10\share file\z.txt";
-        //    print(File.Exists(path));
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha4))
-        //{
-        //}
+        if (Input.GetKeyDown(KeyCode.Alpha2) && currentAccount.id == "god")
+        {
+            Add(1, "2");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3) && currentAccount.id == "god")
+        {
+            Add(1, "3");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3) && currentAccount.id == "god")
+        {
+            Add(1, "4");
+        }
 
         //if (Input.GetKeyDown(KeyCode.Alpha1))
         //{
@@ -348,29 +382,28 @@ public class Manager : MonoBehaviour
     {
         #region use LAN
 
-        string content = File.ReadAllText(path1 + "\\system.txt");
+        string path = path1 + "\\system.txt";
+        string content = File.ReadAllText(path);
         if (string.IsNullOrEmpty(content))
         {
             systemData.currentId = "1";
-            print("A");
         }
         else
         {
-            systemData = JsonUtility.FromJson<SystemData>(content);
-            print(content);
+            systemData = Data.Load<SystemData>(path);
         }
         #endregion
 
         #region use gg
-        db = FirebaseFirestore.DefaultInstance;
+        //db = FirebaseFirestore.DefaultInstance;
 
-        foreach (var item in tongHopQuanNhanPanel.dropdownMultiSelects)
-        {
-            item.GetComponent<Button>().onClick.AddListener(() =>
-            {
-                tongHopQuanNhanPanel.ShowListInfo();
-            });
-        }
+        //foreach (var item in tongHopQuanNhanPanel.dropdownMultiSelects)
+        //{
+        //    item.GetComponent<Button>().onClick.AddListener(() =>
+        //    {
+        //        tongHopQuanNhanPanel.ShowListInfo();
+        //    });
+        //}
         #endregion
     }
 
@@ -382,7 +415,7 @@ public class Manager : MonoBehaviour
     void SaveSystemData()
     {
         #region use LAN
-        Data.Save(path1 + "\\members.txt", systemData);
+        Data.Save(path1 + "\\system.txt", systemData);
         #endregion
     }
     public void StartQuanLy()
@@ -398,45 +431,61 @@ public class Manager : MonoBehaviour
 
         print("reload");
         #region use LAN
-        string content = File.ReadAllText(path1 + "\\members.txt");
-        infoMembers = JsonUtility.FromJson<InfoMembers>(content);
+        //string content = File.ReadAllText(path1 + "\\members.txt");
+        //infoMembers = JsonUtility.FromJson<InfoMembers>(content);
+        string path = path1 + "\\members.txt";
+        infoMembers = Data.Load<InfoMembers>(path);
 
-        //tongHopQuanNhanPanel.filters.ForEach(n => n.data.Clear());
+        foreach (var item in tongHopQuanNhanPanel.dropdownMultiSelects)
+        {
+            for (int i = 0; i < item.items.Count; i++)
+            {
+                item.RemoveItem(item.items[i].itemName);
+            }
+        }
 
-        //foreach (var item in tongHopQuanNhanPanel.dropdownMultiSelects)
-        //{
-        //    for (int i = 0; i < item.items.Count; i++)
-        //    {
-        //        item.RemoveItem(item.items[i].itemName);
-        //    }
-        //}
+        foreach (var item in tongHopQuanNhanPanel.dropdownMultiSelects)
+        {
+            foreach (var jtem in infoMembers.members)
+            {
+                Dictionary<string, string> map = new Dictionary<string, string>();
+                for (int i = 0; i < jtem.nameInfo.Count; i++)
+                {
+                    map.Add(jtem.nameInfo[i], jtem.info[i]);
+                }
 
-        //foreach (var item in tongHopQuanNhanPanel.dropdownMultiSelects)
-        //{
-        //    foreach (var jtem in infoPerson)
-        //    {
-        //        string var = jtem.infoPerson.GetValueOrDefault(item.name).ToString();
+                string var = map.GetValueOrDefault(item.name).ToString();
 
-        //        bool contain = false;
+                bool contain = false;
 
-        //        foreach (var ntem in item.items)
-        //        {
-        //            if (ntem.itemName == var)
-        //            {
-        //                contain = true;
-        //                break;
-        //            }
-        //        }
+                foreach (var ntem in item.items)
+                {
+                    if (ntem.itemName == var)
+                    {
+                        contain = true;
+                        break;
+                    }
+                }
 
-        //        if (!contain)
-        //        {
-        //            item.CreateNewItem(var, true);
+                if (!contain)
+                {
+                    item.CreateNewItem(var, true);
+                }
+            }
 
-        //        }
-        //    }
+            item.UpdateItemLayout();
+        }
 
-        //    item.UpdateItemLayout();
-        //}
+        foreach (var item in tongHopQuanNhanPanel.dropdownMultiSelects)
+        {
+            foreach (var jtem in item.items)
+            {
+                jtem.onValueChanged.AddListener((x) =>
+                {
+                    tongHopQuanNhanPanel.ShowListInfo();
+                });
+            }
+        }
 
         #endregion
 
@@ -550,6 +599,7 @@ public class Manager : MonoBehaviour
         #region use LAN
 
         Dictionary<string, string> dict = GetRandomDic();
+        dict["don vi"] = c;
 
         string path = @"\\192.168.1.10\share file\members.txt";
         if (File.Exists(path))
@@ -559,7 +609,8 @@ public class Manager : MonoBehaviour
             infoMembers.members = new List<InfoMember>();
             if (!string.IsNullOrEmpty(content))
             {
-                infoMembers = JsonUtility.FromJson<InfoMembers>(content);
+                infoMembers = Data.Load<InfoMembers>(path);
+                //infoMembers = JsonUtility.FromJson<InfoMembers>(content);
             }
 
             InfoMember infoMember = new InfoMember();

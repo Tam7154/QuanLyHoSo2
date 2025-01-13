@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: fb383bf196c715549a7aeef2ebcc4927
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -1
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - UTM Androgyne
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: beb81803bae04a94b90876b8b0e7a010, type: 3}
+  - {fileID: 12800000, guid: 2df38e75033780c4dab61e93f9f31302, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
