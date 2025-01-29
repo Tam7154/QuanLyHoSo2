@@ -7,6 +7,9 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Windows.Forms;
+using Button = UnityEngine.UI.Button;
+using Application = UnityEngine.Application;
 
 public class TongHopQuanNhanPanel : MonoBehaviour
 {
@@ -39,6 +42,10 @@ public class TongHopQuanNhanPanel : MonoBehaviour
                     Toggle toggle = t.Find(item.Key).GetComponent<Toggle>();
                     toggle.isOn = bool.Parse(item.Value.ToString());
                 }
+                else if (item.Key == "avatar")
+                {
+
+                }
                 else
                 {
                     TextMeshProUGUI text = t.Find(item.Key).GetComponent<TextMeshProUGUI>();
@@ -47,10 +54,26 @@ public class TongHopQuanNhanPanel : MonoBehaviour
             }
         }
 
-        g.transform.GetChild(0).transform.Find("Close").GetComponent<Button>().onClick.AddListener(() =>
+        string path = $"{Application.streamingAssetsPath}\\{map["ho va ten"]} - {map["nam sinh"]} - {map["don vi"]}.png";
+        if (File.Exists(path))
         {
-            Destroy(g);
-        });
+            Transform avatar = t.GetChild(0);
+
+            avatar.transform.GetChild(0).gameObject.SetActive(true);
+            avatar.transform.GetChild(1).gameObject.SetActive(true);
+            avatar.transform.GetChild(1).GetComponent<Image>().color = new Color(1, 1, 1, 1);
+
+            byte[] imageBytes = System.IO.File.ReadAllBytes(path);
+            Texture2D txt = new Texture2D(3, 2);
+            txt.LoadImage(imageBytes);
+            avatar.transform.GetChild(1).GetComponent<Image>().sprite = Sprite.Create(txt, new Rect(0, 0, txt.width, txt.height), new Vector2(txt.width / 2, txt.height / 2));
+            avatar.transform.GetChild(2).gameObject.SetActive(false);
+        }
+
+        g.transform.GetChild(0).transform.Find("Close").GetComponent<Button>().onClick.AddListener(() =>
+            {
+                Destroy(g);
+            });
 
         g.transform.GetChild(0).transform.Find("Export").GetComponent<Button>().onClick.AddListener(() =>
         {
@@ -392,6 +415,22 @@ public class TongHopQuanNhanPanel : MonoBehaviour
                         //TextMeshProUGUI text = t.Find(item.Key).GetComponent<TextMeshProUGUI>();
                         //text.text += " " + item.Value;
                     }
+                }
+
+                string path = $"{Application.streamingAssetsPath}\\{map["ho va ten"]} - {map["nam sinh"]} - {map["don vi"]}.png";
+                if (File.Exists(path))
+                {
+                    Transform avatar = t.GetChild(0);
+
+                    avatar.transform.GetChild(0).gameObject.SetActive(true);
+                    avatar.transform.GetChild(1).gameObject.SetActive(true);
+                    avatar.transform.GetChild(1).GetComponent<Image>().color = new Color(1, 1, 1, 1);
+
+                    byte[] imageBytes = System.IO.File.ReadAllBytes(path);
+                    Texture2D txt = new Texture2D(3, 2);
+                    txt.LoadImage(imageBytes);
+                    avatar.transform.GetChild(1).GetComponent<Image>().sprite = Sprite.Create(txt, new Rect(0, 0, txt.width, txt.height), new Vector2(txt.width / 2, txt.height / 2));
+                    avatar.transform.GetChild(2).gameObject.SetActive(false);
                 }
 
                 //g.transform.GetChild(0).transform.Find("Submit").GetComponent<Button>().onClick.AddListener(() =>

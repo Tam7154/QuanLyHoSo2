@@ -22,7 +22,7 @@ public class SlotInTongHopQuanNhan : MonoBehaviour
 
     public void OnClick()
     {
-        if (Time.time - lastTime <= .2f)
+        if (Time.time - lastTime <= .4f)
         {
             Manager.Instance.tongHopQuanNhanPanel.ShowInfoPanel(infoMember);
             //Manager.Instance.tongHopQuanNhanPanel.ShowInfoPanel(infoPerson);

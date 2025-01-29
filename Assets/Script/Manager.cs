@@ -16,7 +16,8 @@ using System.Diagnostics;
 using Debug = UnityEngine.Debug;
 using System;
 using Random = UnityEngine.Random;
-
+using System.Windows.Forms;
+using Application = UnityEngine.Application;
 
 public class data
 {
@@ -53,8 +54,8 @@ public class Manager : MonoBehaviour
     public InfoMembers infoMembers;
 
     [Header("path")]
-    //string path1 = @"\\LAPTOP-K8JJVH7S\share file";
-    string path1 = @"\\192.168.1.10\share file";
+    //string path1 = @"\\192.168.1.10\share file";
+    string path1 = @"\\LAPTOP-K8JJVH7S\share file";
     string path2 = @"\\192.168.1.11\share file";
     string path3 = @"\\192.168.1.12\share file";
 
@@ -235,6 +236,16 @@ public class Manager : MonoBehaviour
         {
             Add(1, "4");
         }
+        if (Input.GetKeyDown(KeyCode.T) && currentAccount.id == "god")
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.png)|*.png|All files (*.*)|*.*";
+            openFileDialog.Title = "Chọn một file";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                LoadImageToTexture(openFileDialog.FileName);
+            }
+        }
 
         //if (Input.GetKeyDown(KeyCode.Alpha1))
         //{
@@ -276,6 +287,27 @@ public class Manager : MonoBehaviour
         //}
     }
 
+    private void LoadImageToTexture(string path)
+    {
+        // Đọc dữ liệu từ file hình ảnh
+        byte[] imageBytes = System.IO.File.ReadAllBytes(path);
+        string nameImg = Path.GetFileName(path);
+        string newPath = Application.streamingAssetsPath + "/" + nameImg;
+        File.WriteAllBytes(newPath, imageBytes);
+
+        //File.Copy(path, newPath);
+
+        // Tạo Texture2D từ dữ liệu
+        //Texture2D texture = new Texture2D(2, 2);
+        //texture.LoadImage(imageBytes);
+
+        // Hiển thị Texture lên GameObject (nếu cần)
+        //Renderer renderer = GetComponent<Renderer>();
+        //if (renderer != null)
+        //{
+        //    renderer.material.mainTexture = texture;
+        //}
+    }
     public async void run(string query)
     {
         print("run: " + query);
