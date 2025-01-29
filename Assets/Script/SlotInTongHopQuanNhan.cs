@@ -13,6 +13,7 @@ public class SlotInTongHopQuanNhan : MonoBehaviour
 
     [Header("LAN")]
     public InfoMember infoMember;
+    public Dictionary<string,string> dicMember;
 
     float lastTime;
     private void Start()
@@ -24,7 +25,7 @@ public class SlotInTongHopQuanNhan : MonoBehaviour
     {
         if (Time.time - lastTime <= .4f)
         {
-            Manager.Instance.tongHopQuanNhanPanel.ShowInfoPanel(infoMember);
+            Manager.Instance.tongHopQuanNhanPanel.ShowInfoPanel(infoMember, dicMember);
             //Manager.Instance.tongHopQuanNhanPanel.ShowInfoPanel(infoPerson);
             lastTime = Time.time;
         }
