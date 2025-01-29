@@ -20,7 +20,7 @@ public class TongHopQuanNhanPanel : MonoBehaviour
     public List<Filter> filters;
     public List<DropdownMultiSelect> dropdownMultiSelects;
 
-    public void ShowInfoPanel(InfoMember infoMember)
+    public void ShowInfoPanel(InfoMember infoMember, Dictionary<string, string> dic = null)
     {
         GameObject g = Instantiate(Resources.Load("Quan Nhan") as GameObject, GameObject.Find("Canvas").transform);
         Transform t = g.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0).transform;
@@ -125,16 +125,34 @@ public class TongHopQuanNhanPanel : MonoBehaviour
             Destroy(item.gameObject);
         }
 
+        List<Dictionary<string, string>> map = new List<Dictionary<string, string>>();
         foreach (var item in Manager.Instance.infoMembers.members)
         {
-            Dictionary<string, string> infoDic = new Dictionary<string, string>();
+            map.Add(new Dictionary<string, string>());
             for (int i = 0; i < item.nameInfo.Count; i++)
             {
-                infoDic.Add(item.nameInfo[i], item.info[i]);
+                map[map.Count - 1].Add(item.nameInfo[i], item.info[i]);
             }
+        }
+
+        var sortedDictionaries = map.OrderBy(d => d["don vi"]).ToList();
+
+        //foreach (var dictionaries in sortedDictionaries)
+        //{
+        //    print(dictionaries["don vi"]);
+        //}
+
+        foreach (var item in sortedDictionaries)
+        //foreach (var item in Manager.Instance.infoMembers.members)
+        {
+            //Dictionary<string, string> infoDic = new Dictionary<string, string>();
+            //for (int i = 0; i < item.nameInfo.Count; i++)
+            //{
+            //    infoDic.Add(item.nameInfo[i], item.info[i]);
+            //}
 
             bool b = true;
-            foreach (var jtem in infoDic)
+            foreach (var jtem in item)
             {
                 foreach (var ntem in dropdownMultiSelects)
                 {
@@ -169,11 +187,13 @@ public class TongHopQuanNhanPanel : MonoBehaviour
             if (b)
             {
                 GameObject slot = Instantiate(Resources.Load("Slot in TongHopQuanNhan") as GameObject, content);
-                slot.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = infoDic.GetValueOrDefault("ho va ten");
-                slot.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = infoDic.GetValueOrDefault("don vi").ToString();
-                slot.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = infoDic.GetValueOrDefault("nam sinh").ToString();
+                slot.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text =item.GetValueOrDefault("ho va ten");
+                slot.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text =item.GetValueOrDefault("don vi").ToString();
+                slot.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text =item.GetValueOrDefault("nam sinh").ToString();
                 //slot.name = infoDic.GetValueOrDefault("id").ToString();
-                slot.GetComponent<SlotInTongHopQuanNhan>().infoMember = item;
+
+                //slot.GetComponent<SlotInTongHopQuanNhan>().infoMember = item;
+                slot.GetComponent<SlotInTongHopQuanNhan>().dicMember = item;
             }
         }
 
